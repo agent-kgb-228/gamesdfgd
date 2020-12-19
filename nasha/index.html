@@ -93,7 +93,6 @@
             if (ochki >= 15000000000) {
 
                 ochki -= 15000000000
-                ochki += nalogi
                 ochk.textContent = ochki
             }
             else {
@@ -122,6 +121,9 @@
             else {
                 alert("Денег в казне нет!!!")
             }
+        }
+        if(ochk == 0){
+            document.write("вы проиграли")
         }
 
         setInterval(() => {
