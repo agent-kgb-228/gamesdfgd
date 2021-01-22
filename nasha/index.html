@@ -110,7 +110,7 @@
         let ochki_Plus_auto = 0;
         let nalogi = 1000000
         function ledx() {
-            let a = +prompt("введите любую сумму ")
+            let a = +prompt("где наши деньги? на что пошла наша многомиллиардная помощь? ")
             ochki += a
             ochk.textContent = ochki
         }
@@ -132,7 +132,7 @@
                 ochk.textContent = ochki
             }
             else {
-                alert("Бля... Денег на ремонт нет!!! " + "  " + "Идите на хуй со своими дорогами!!!")
+                alert("Блин... Денег на ремонт нет!!! " + "  " + "Идите на фиг со своими дорогами!!!")
             }
         }
         function bon() {
@@ -143,7 +143,7 @@
                 ochk.textContent = ochki
             }
             else {
-                alert("Пиздец!!! Денег в казне нет!!!")
+                alert("Песец!!! Денег в казне нет!!!")
             }
         }
         function autoPlus() {
@@ -157,9 +157,7 @@
                 alert("Денег в казне нет!!!")
             }
         }
-        if (ochk == 0) {
-            document.write("вы проиграли")
-        }
+      
 
         setInterval(() => {
             ochki += ochki_Plus_auto;
