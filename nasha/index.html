@@ -104,10 +104,12 @@
     </footer>
     <script>
         let ochk = document.querySelector('#kom');
+        
         let ochki = 10000000;
         let ochki_Plus = 1;
         let ochki_Plus_auto = 0;
         let nalogi = 1000000
+        
         function ledx() {
             let a = +prompt("где наши деньги? на что пошла наша многомиллиардная помощь? ")
             ochki += a
@@ -156,13 +158,15 @@
                 alert("Денег в казне нет!!!")
             }
         }
-      
 
         setInterval(() => {
             ochki += ochki_Plus_auto;
             ochk.textContent = ochki
 
         }, 100)
+
+
+
        
 
 
