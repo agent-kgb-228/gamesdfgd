@@ -99,7 +99,7 @@ ochki++
     }
     //смерть
 
-}
+
 
     if (snake.x[0] >= (w / size) + 1) {
         snake.x[0] = -1;
