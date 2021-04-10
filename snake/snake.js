@@ -98,13 +98,7 @@ ochki++
         console.log(snake)
     }
     //смерть
-function eatTail(snake, arr){
-    for(let i = 0; i < arr; i++){
-        if(snake.x[0] == arr[i].x && snake.y[0] == arr[i].y){
-            snake.x[0] == 0
-            snake.y[0] == 0
-        }
-    }
+
 }
 
     if (snake.x[0] >= (w / size) + 1) {
