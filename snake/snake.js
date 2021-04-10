@@ -85,6 +85,10 @@ function step() {
     if (snake.move === 'left') snake.x[0]--;
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
+//победа
+if(ochki == 100){
+    alert("поздравляем вы выкупили ЯНДЕКС")
+}
 
 
 
