@@ -11,19 +11,19 @@
     border-radius: 40px 40px 100px 40px;/*скругление можно менять*/
 }
 
-#canvas {
-    height: 600px;/*нельзя менять*/
-    width: 500px;/*нельзя менять*/
+canvas {
+    height: 640px;/*нельзя менять*/
+    width: 320px;/*нельзя менять*/
     background: rgb(158, 173, 115);/*можно менять*/
     border: solid 1px #000000;/*нельзя менять*/
-    margin: 10px 50px 0px 50px;/*нельзя*/
+    margin: 10px 00px 0px 135px;/*нельзя*/
 }
 
 .button {
    background: grey; /*цвет где расположенвы кнопки*/
-    margin: 10px 0px 0px 50px; /*отступы не трогать*/
+    margin: 0px 50px 0px 50px; /*отступы не трогать*/
     border: solid 1px #000000; /*граница: цвет, размер.*/
-    height: 272px;/*высота*/
+    height: 240px;/*высота*/
     border-radius: 0px 0px 100px 0px; /*скугление*/
 }
 
