@@ -3,37 +3,37 @@
     padding: 0%;
 }
 
-.panel {
-    width: 600px;
-    height: 900px;
-    background: red;
-    border: solid 5px green;
-    border-radius: 40px 40px 100px 40px;
+.panel/*сама иговая панель*/ { 
+    width: 600px;/*не трогать*/
+    height: 900px;/*высоту не трогать*/
+    background: red;/*цвет*/
+    border: solid 5px green;/*граница*/
+    border-radius: 40px 40px 100px 40px;/*скругление можно менять*/
 }
 
 #canvas {
-    height: 600px;
-    width: 500px;
-    background: rgb(158, 173, 115);
-    border: solid 1px #000000;
-    margin: 10px 50px 0px 50px;
+    height: 600px;/*нельзя менять*/
+    width: 500px;/*нельзя менять*/
+    background: rgb(158, 173, 115);/*можно менять*/
+    border: solid 1px #000000;/*нельзя менять*/
+    margin: 10px 50px 0px 50px;/*нельзя*/
 }
 
 .button {
-   background: grey;
-    margin: 10px 0px 0px 50px;
-    border: solid 1px #000000;
-    height: 272px;
-    border-radius: 0px 0px 100px 0px
+   background: grey; /*цвет где расположенвы кнопки*/
+    margin: 10px 0px 0px 50px; /*отступы не трогать*/
+    border: solid 1px #000000; /*граница: цвет, размер.*/
+    height: 272px;/*высота*/
+    border-radius: 0px 0px 100px 0px; /*скугление*/
 }
 
 
 
 #grid {
-    width: 20%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background: hotpink;
+    width: 20%;/*нальзя*/
+    display: grid;/*нельзя*/
+    grid-template-columns: 1fr 1fr 1fr;/*нельзя*/
+    background: hotpink; /*можешь менять*/
 }
 
 
@@ -42,13 +42,14 @@
 }
 
 button {
-    height: 40px;
-    border-radius: 5px;
+    height: 40px; /*не трогать*/
+    border-radius: 5px;/*можешь редактировать до 20px*/
+    background: red;/*цвет кнопок*/
 }
 .info{
-    text-align: right;
-    margin: 10px 50px 0px 50px;
+    text-align: right;/*не трогать*/
+    margin: 10px 50px 0px 50px;/*не трогать*/
 }
 .contorls{
-    text-align: center;
+    text-align: center;/*не трогать*/
 }
