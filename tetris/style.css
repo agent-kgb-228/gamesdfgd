@@ -1,55 +1,57 @@
 * {
     margin: 0%;
     padding: 0%;
-}
-
-.panel/*сама иговая панель*/ { 
-    width: 600px;/*не трогать*/
-    height: 900px;/*высоту не трогать*/
-    background: red;/*цвет*/
-    border: solid 5px green;/*граница*/
-    border-radius: 40px 40px 100px 40px;/*скругление можно менять*/
-}
+    }
+    
+    .panel {
+    width: 600px;
+    height: 900px;
+    background: rgb(255, 0, 0);
+    border: solid 5px rgb(255, 0, 0);
+    border-radius: 40px 40px 99px 40px;
+    }
 
 canvas {
     height: 640px;/*нельзя менять*/
     width: 320px;/*нельзя менять*/
-    background: rgb(158, 173, 115);/*можно менять*/
+    background: url('Vy5XnOBPWlQ.jpg');/*можно менять*/
+    background-size: 100%;
     border: solid 1px #000000;/*нельзя менять*/
     margin: 10px 00px 0px 135px;/*нельзя*/
 }
 
 .button {
-   background: grey; /*цвет где расположенвы кнопки*/
-    margin: 0px 50px 0px 50px; /*отступы не трогать*/
-    border: solid 1px #000000; /*граница: цвет, размер.*/
-    height: 240px;/*высота*/
-    border-radius: 0px 0px 100px 0px; /*скугление*/
-}
-
-
-
-#grid {
-    width: 20%;/*нальзя*/
-    display: grid;/*нельзя*/
-    grid-template-columns: 1fr 1fr 1fr;/*нельзя*/
-    background: hotpink; /*можешь менять*/
-}
-
-
-#input {
+    background: rgb(255, 0, 0);
+    margin: 10px 0px 0px 50px;
+    border: solid 1px #ff0000;
+    height: 230px;
+    border-radius: 0px 0px 99px 0px
+    }
+    
+    
+    
+    #grid {
+    width: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: rgb(255, 0, 0);
+    }
+    
+    
+    #input {
     width: 19.5%;
-}
-
-button {
-    height: 40px; /*не трогать*/
-    border-radius: 5px;/*можешь редактировать до 20px*/
-    background: red;/*цвет кнопок*/
-}
-.info{
-    text-align: right;/*не трогать*/
-    margin: 10px 50px 0px 50px;/*не трогать*/
-}
-.contorls{
-    text-align: center;/*не трогать*/
-}
+    }
+    
+    button {
+    height: 40px;
+    border-radius: 20px;
+    background: rgb(251, 255, 0)
+    }
+    .info{
+    text-align: right;
+    margin: 10px 50px 0px 50px;
+    }
+    .contorls{
+    text-align: center;
+    }
+    
