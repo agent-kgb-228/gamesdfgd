@@ -7,48 +7,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetris</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
 </head>
 
 <body>
+    <audio id="Korobejniki" src="music/Korobejniki-Tetris.mp3"></audio>
     <header>
 
     </header>
     <main>
-        <div class="panel">
-            <canvas id="game" width="320" height="640"></canvas>
-            <div class="button">
-                <div id="grid">
-                    <br>
-                    <button>скор +</button>
-                    <br>
-                    <button>-</button>
-                    <br>
-                    <button>+</button>
-                    <br>
-                    <button>скор <br> -</button>
-                    <br>
+        <div class="container">
+            <div class="collapse" id="История">
+                <div class="photol">
+
+                    <h1> История тетриса </h1>
+                    <p> «Тетрис» был впервые написан Алексеем Пажитновым 6 июня 1984 года на компьютере Электроника-60.
+                        Игра быстро распространилась по Москве и далее по всему миру. Несколько месяцев спустя про игру
+                        узнал импортёр программного обеспечения из Венгрии — Роберт Стейн. Стейн поехал в Москву, где
+                        встретился с Алексеем Пажитновым и договорился о лицензии на выпуск игры.</p>
+                    <p>
+                        Еще Алексей хотел сделать многопользовательский режим где можно было играть против других
+                        игроков.
+                        Но самое интересное, что он ещё не закончил(( </p>
+                    <h2> Музыка игры </h2>
+                    Первоначальные версии игры Пажитнова и Герасимова не имели музыкального сопровождения, но русская
+                    песня «Коробейники», часто упоминаемая просто как музыка из Тетриса
+                    На эту мелодию многие западные музыкальные группы и исполнители делали ремиксы и свои аранжировки,
+                    напирая именно на то, что эта мелодия — из знаменитого «Тетриса». Хотя есть немало диджеев, которые
+                    сделали ремикс мелодии, обозначив «tetris remix», но не опубликовав в альбомах.
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#История"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            Скрыть
+                        </button>
+                    </div>
                 </div>
-                <div class="info">
-                    <button>История</button>
-                    <button>Информация</button>
+            </div>
+            <div class="panel">
+                <p class="chet">Счет <span id="kom">0</span></p>
+                <canvas id="game" width="320" height="640"></canvas>
+                <div class="button">
+                    <div id="grid">
+
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button class="btn btn-warning">-</button>
+                            <button onclick="playmusic()" class="btn btn-warning">🔊</button>
+                            <button class="btn btn-warning">+</button>
+                        </div>
+
+
+
+
+                        <br>
+
+                    </div>
+
+                    <br>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                        <button class="btn btn-warning" class="btn btn-warning" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#История" aria-expanded="false"
+                            aria-controls="collapseExample">История</button>
+                        <button onclick="stope()" class="btn btn-warning">Пауза</button>
+                        <button onclick="location.reload(); return false;" class="btn btn-success">Начать
+                            заново</button>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                            Управаление
+                        </button>
+                        <button class="btn btn-warning" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Президент" aria-expanded="false"
+                            aria-controls="collapseExample">Информация</button>
+
+
+                    </div>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
+                        aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Управаление</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Закрыть"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div>
+                                <p>
+                                    <b>←</b> - влево
+                                    <br>
+                                    <b>→</b> - враво
+                                    <br>
+                                    <b>W(Ц)</b> - поворот
+                                    <br>
+                                    <b>S(Ы)</b> - вниз
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
-                <div class="contorls">
-                    <button>Пауза</button>
-                    <button onclick="location.reload(); return false;">Начать заново</button>
-                </div>
+
+
+
+
 
             </div>
+            <div class="collapse" id="Президент">
+                <div class="photol2">
+                    <h1>Тетрис</h1>
+                    <hr>
+                    <p>
+                        <b>Тетрис </b> - это увлекательная игра в стиле "думай" первоначально изобретённая и
+                        разработанная
+                        советским программистом Алексеем Пажитновым. Игра была выпущена 6 июня 1984 года — в это время
+                        Пажитнов работал в Вычислительном центре Академии наук СССР.
+                        Особую известность в США, и Японии приобрела версия для портативной консоли GameBoy,
+                        выпускавшаяся японской компанией Nintendo.
+                    </p>
+                    <h2>Правила</h2>
+                    <p>
+                        Случайная фигурка летит сверху ширана которая 10 ,а высота 20 клеток.игрок может
+                        поворачивать фигуру на 90 градусов и двигать,также можно повачивать фигурку пока она не
+                        сомьеститься и она проподает и вам назначают очки)
+                    </p>
+                    <h2>Начисление очков</h2>
+                    <p>
+                        Начисление очков в разных версиях «Тетриса» довольно разнообразное. Очки могут начисляться за
+                        убранные линии, за сброшенные фигурки, за переход на новую скорость и тому подобное.
+                        При начислении очков за линии количество очков обычно зависит от того, сколько линий убрано за
+                        один
+                        раз.(также была киберспортивная дисцеплина где японцы шпилили место контры))
+                        При начислении очков за линии количество очков обычно зависит от того, сколько линий убрано за
+                        один
+                        раз. Например, в китайских «Тетрисах», популярных в СНГ в 1990-х годах, начисление очков обычно
+                        было
+                        таким: 1 линия — 100 очков, 2 линии — 300 очков, 3 линии — 700 очков, 4 линии
+                        При начислении очков за сброшенные фигурки могут учитываться высота, на которой остановилась
+                        фигурка.
+                    </p>
 
 
-
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-danger" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#Президент" aria-expanded="false" aria-controls="collapseExample">
+                            Скрыть
+                        </button>
+                    </div>
+                </div>
+            </div>
 
         </div>
+
+
+
+
     </main>
     <footer>
 
     </footer>
-        <script src="game.js"></script>
+    <script src="test.js"></script>
+    <script src="music.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

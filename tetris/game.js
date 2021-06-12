@@ -4,9 +4,9 @@ function getRandomInt(min, max) {
 
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-// generate a new tetromino sequence
-// @see https://tetris.fandom.com/wiki/Random_Generator
+let ochki = 0;
+console.log(ochki)
+// случайная генерация след. фигурки
 function generateSequence() {
   const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
 
@@ -40,8 +40,8 @@ function getNextTetromino() {
   };
 }
 
-// rotate an NxN matrix 90deg
-// @see https://codereview.stackexchange.com/a/186834
+// поворот матрицы NxN на 90 градусов
+
 function rotate(matrix) {
   const N = matrix.length - 1;
   const result = matrix.map((row, i) =>
@@ -51,16 +51,16 @@ function rotate(matrix) {
   return result;
 }
 
-// check to see if the new matrix/row/col is valid
+// проверка, является ли новая матрица/строка/col допустимой
 function isValidMove(matrix, cellRow, cellCol) {
   for (let row = 0; row < matrix.length; row++) {
     for (let col = 0; col < matrix[row].length; col++) {
       if (matrix[row][col] && (
-          // outside the game bounds
+          // за пределами игры
           cellCol + col < 0 ||
           cellCol + col >= playfield[0].length ||
           cellRow + row >= playfield.length ||
-          // collides with another piece
+          // сталкивается с другим куском
           playfield[cellRow + row][cellCol + col])
         ) {
         return false;
@@ -71,13 +71,13 @@ function isValidMove(matrix, cellRow, cellCol) {
   return true;
 }
 
-// place the tetromino on the playfield
+// помещаем tetromino на поле
 function placeTetromino() {
   for (let row = 0; row < tetromino.matrix.length; row++) {
     for (let col = 0; col < tetromino.matrix[row].length; col++) {
       if (tetromino.matrix[row][col]) {
 
-        // game over if piece has any part offscreen
+        // игра окончена, если у части есть какая-либо часть за кадром
         if (tetromino.row + row < 0) {
           return showGameOver();
         }
@@ -100,13 +100,14 @@ function placeTetromino() {
     }
     else {
       row--;
+      ochki++
     }
   }
 
   tetromino = getNextTetromino();
 }
 
-// show the game over screen
+// конец игры
 function showGameOver() {
   cancelAnimationFrame(rAF);
   gameOver = true;
@@ -128,8 +129,8 @@ const context = canvas.getContext('2d');
 const grid = 32;
 const tetrominoSequence = [];
 
-// keep track of what is in every cell of the game using a 2d array
-// tetris playfield is 10x20, with a few rows offscreen
+// следите за тем, что находится в каждой ячейке игры, используя 2D-массив
+// игровое поле тетриса 10х20, с несколькими рядами за кадром
 const playfield = [];
 
 // populate the empty state
@@ -141,8 +142,7 @@ for (let row = -2; row < 20; row++) {
   }
 }
 
-// how to draw each tetromino
-// @see https://tetris.fandom.com/wiki/SRS
+// массив с данными фигурок
 const tetrominos = {
   'I': [
     [0,0,0,0],
@@ -181,7 +181,7 @@ const tetrominos = {
   ]
 };
 
-// color of each tetromino
+// цвета
 const colors = {
   'I': 'cyan',
   'O': 'yellow',
@@ -194,36 +194,48 @@ const colors = {
 
 let count = 0;
 let tetromino = getNextTetromino();
-let rAF = null;  // keep track of the animation frame so we can cancel it
+let rAF = null;  // слежка за кадром анимации, чтобы мы могли отменить его
 let gameOver = false;
 
-// game loop
+let pause = false;
+function stope(){
+  if(pause == false){
+    pause = true
+  } 
+  else{
+    pause = false
+    loop()
+  }
+}
+console.log(pause)
+// цикл
 function loop() {
-  rAF = requestAnimationFrame(loop);
+  if(!pause)
+   rAF = requestAnimationFrame(loop);
   context.clearRect(0,0,canvas.width,canvas.height);
 
-  // draw the playfield
+  // прорисовка игрового поля
   for (let row = 0; row < 20; row++) {
     for (let col = 0; col < 10; col++) {
       if (playfield[row][col]) {
         const name = playfield[row][col];
         context.fillStyle = colors[name];
 
-        // drawing 1 px smaller than the grid creates a grid effect
+        // рисунок на 1 пиксель меньше сетки создает эффект сетки
         context.fillRect(col * grid, row * grid, grid-1, grid-1);
       }
     }
   }
 
-  // draw the active tetromino
+  // нарисовать новую фигурку
   if (tetromino) {
 
-    // tetromino falls every 35 frames
+    // фигурка падаетъ каждые 35 кадров
     if (++count > 35) {
       tetromino.row++;
       count = 0;
 
-      // place piece if it runs into anything
+      // помещение куска, если он наткнется на что-нибудь
       if (!isValidMove(tetromino.matrix, tetromino.row, tetromino.col)) {
         tetromino.row--;
         placeTetromino();
@@ -244,11 +256,11 @@ function loop() {
   }
 }
 
-// listen to keyboard events to move the active tetromino
+// клавиатурные управления
 document.addEventListener('keydown', function(e) {
   if (gameOver) return;
 
-  // left and right arrow keys (move)
+  //  влево
   if (e.which === 37 || e.which === 39) {
     const col = e.which === 37
       ? tetromino.col - 1
@@ -259,15 +271,15 @@ document.addEventListener('keydown', function(e) {
     }
   }
 
-  // up arrow key (rotate)
-  if (e.which === 32) {
+  // поворот
+  if (e.which === 32 || e.which === 38) {
     const matrix = rotate(tetromino.matrix);
     if (isValidMove(matrix, tetromino.row, tetromino.col)) {
       tetromino.matrix = matrix;
     }
   }
 
-  // down arrow key (drop)
+  // вправо
   if(e.which === 40) {
     const row = tetromino.row + 1;
 
@@ -282,5 +294,5 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// start the game
+// начало игры
 rAF = requestAnimationFrame(loop);
