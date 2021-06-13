@@ -1,38 +1,106 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>games</title>
-    <link rel="stylesheet" href="style.css">
+
     <link rel="shortcut icon" href="serp.ico" image="/x-icon">
+
+    <link rel="stylesheet" href="/political-na-postsovet-space/style.css">
+    <link rel="stylesheet" href="/political-na-postsovet-space/country/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
+
 <body>
- 
+    <header>
+
+        <a href="/games/"><img src="serp.ico" alt="" class="dre"> USSR games </a>
+        <div>
+        <a href="/games/snake/" title="Внимание по тех причинам некоторые игры не работают">Змейка</a>
+        <a href="/games/nasha/">Казна России</a>
+        <a href="/games/tetris/">Тетрис</a>
+        </div>
+
+    </header>
+
     <main>
-    <h1>games</h1>
-    <a href="nasha/">Казна России</a>
+        <div class="container">
+            <br>
+            <div class="alert alert-warning" role="alert">
+                Внимание по техеническим причинам некоторые игры не работают
+              </div>
+
+            <h1>Добро пожаловать на сайт <br> Игры СССР</h1>
+            <hr>
+            <p>Этот сайт посвещен простым играм, которые были придуманые в СССР и РФ.
+            </p>
+            <p>Самая знаменита игра которая придуманная в СССР - Тетрис</p>
+            <p><b>Тетрис</b> (производное от «тетрамино» и «теннис») — компьютерная игра, первоначально изобретённая и
+                разработанная советским программистом Алексеем Пажитновым. Игра была выпущена 6 июня 1984 года — в это
+                время Пажитнов работал в Вычислительном центре Академии наук СССР.</p>
+            <h2>Важная информация</h2>
+            <p>Игры являются копиями огриганолов. Исходный код наших игры является открытым, и вы можете посмотреть на Github.</p>
+                <hr>
+
+            <!-- Put this script tag to the <head> of your page -->
+            <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+
+            <script type="text/javascript">
+                VK.init({ apiId: 7752244, onlyWidgets: true });
+            </script>
+
+            <!-- Put this div tag to the place, where the Comments block will be -->
+            <div id="vk_comments"></div>
+            <script type="text/javascript">
+                VK.Widgets.Comments("vk_comments", { limit: 20, attach: "*" });
+            </script>
+            <br>
+
+        </div>
+
+
+
+
     </main>
-    <footer>&copy; 2020-2021</footer>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <hr>
+                    <p>&copy; 2020-2021 ООО "СССР"</p>
+                    <p><a href="/political-na-postsovet-space/">Постсоветское пространство</a></p>
+                    <p><a href="/o-windows/">Windows</a></p>
+                    <p><a href="/russia/">Российская Федерация</a></p>
+
+                    <br>
+                </div>
+                <div class="col-sm">
+                    <hr>
+                    <p> <b><a href="/political-na-postsovet-space/for-users/"> Для пользователя </a></b></p>
+                    <p><a href="/political-na-postsovet-space/for-users/contacts/">Поддержка</a></p>
+                    <p><a href="/political-na-postsovet-space/for-users/legal/">Правовая информация</a></p>
+                    <p><a href="/political-na-postsovet-space/for-users/legal/confidential/">Политика
+                            Конфиденциальности</a></p>
+                    <p><a href="/political-na-postsovet-space/for-users/files/">Скачать файлы</a></p>
+                </div>
+                <div class="col-sm">
+                    <hr>
+                    <p> <b><a href="/games/">Игры</a></b></p>
+                    <p><a href="/games/snake/">Змейка</a></p>
+                    <p><a href="/games/nasha/">Казна РФ</a></p>
+                    <p><a href="/games/tetris/">Тетрис</a></p>
+          
+                </div>
+            
+            </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
