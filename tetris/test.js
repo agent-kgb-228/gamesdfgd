@@ -73,7 +73,8 @@ const colors = {
 
 // счётчик
 let count = 0;
-let ochki = 10;
+const ochki = 10;
+let shecht = 0;
 let ochk = document.querySelector('#kom');
 console.log(ochki)
 // текущая фигура в игре
@@ -186,8 +187,8 @@ function placeTetromino() {
     for (let row = playfield.length - 1; row >= 0;) {
         // если ряд заполнен
         if (playfield[row].every(cell => !!cell)) {
-            ++ochki
-            ochk.textContent = ochki
+            shecht = shecht + ochki
+            ochk.textContent = shecht
             // очищаем его и опускаем всё вниз на одну клетку
             for (let r = row; r >= 0; r--) {
                 for (let c = 0; c < playfield[r].length; c++) {
