@@ -76,6 +76,10 @@ let count = 0;
 const ochki = 10;
 let shecht = 0;
 let ochk = document.querySelector('#kom');
+let record = document.querySelector('#sde');
+let recordochk = 0;
+
+
 console.log(ochki)
 // текущая фигура в игре
 let tetromino = getNextTetromino();
@@ -189,6 +193,10 @@ function placeTetromino() {
         if (playfield[row].every(cell => !!cell)) {
             shecht = shecht + ochki
             ochk.textContent = shecht
+            if (shecht > recordochk) {
+                recordochk = shecht
+                record.textContent = recordochk
+            }
             // очищаем его и опускаем всё вниз на одну клетку
             for (let r = row; r >= 0; r--) {
                 for (let c = 0; c < playfield[r].length; c++) {
@@ -226,20 +234,20 @@ function showGameOver() {
 
 
 let pause = false;
-function stope(){
-  if(pause == false){
-    pause = true
-  } 
-  else{
-    pause = false
-    loop()
-  }
+function stope() {
+    if (pause == false) {
+        pause = true
+    }
+    else {
+        pause = false
+        loop()
+    }
 }
 // главный цикл игры
 function loop() {
     // начинаем анимацию
-    if(!pause)
-    rAF = requestAnimationFrame(loop);
+    if (!pause)
+        rAF = requestAnimationFrame(loop);
     // очищаем холст
     context.clearRect(0, 0, canvas.width, canvas.height);
 
