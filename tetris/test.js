@@ -218,10 +218,10 @@ function showGameOver() {
     // пишем надпись белым моноширинным шрифтом по центру
     context.globalAlpha = 1;
     context.fillStyle = 'white';
-    context.font = '36px monospace';
+    context.font = '20px monospace';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
+    context.fillText('Russian random beat you!', canvas.width / 2, canvas.height / 2);
 }
 
 
