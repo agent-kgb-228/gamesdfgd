@@ -76,8 +76,6 @@ let count = 0;
 const ochki = 10;
 let shecht = 0;
 let ochk = document.querySelector('#kom');
-let record = document.querySelector('#sde');
-let recordochk = 0;
 
 
 console.log(ochki)
@@ -193,10 +191,7 @@ function placeTetromino() {
         if (playfield[row].every(cell => !!cell)) {
             shecht = shecht + ochki
             ochk.textContent = shecht
-            if (shecht > recordochk) {
-                recordochk = shecht
-                record.textContent = recordochk
-            }
+     
             // очищаем его и опускаем всё вниз на одну клетку
             for (let r = row; r >= 0; r--) {
                 for (let c = 0; c < playfield[r].length; c++) {
