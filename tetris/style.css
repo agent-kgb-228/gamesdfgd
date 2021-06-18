@@ -3,16 +3,19 @@
     margin: 0%;
     padding: 0%;
 }
+body{ 
+    background: url("7Sxm62Nzr_0Iin1AofLbgYxX9B_.jpg");
+    background-size: 100%;
 
+}
 .panel {
     width: 600px;
     height: 900px;
     background: rgb(255, 0, 0);
     border: solid 5px rgb(255, 0, 0);
     border-radius: 40px 40px 99px 40px;
-    margin:  0px 0px 0px 250px;
+margin: 0px 15%;
     position: fixed;
- 
 }
 
 canvas {
@@ -35,7 +38,7 @@ canvas {
     background: rgb(255, 0, 0);
     margin: 10px 0px 0px 50px;
     border: solid 1px #ff0000;
-    height: 189px;
+    height: 180px;
     border-radius: 0px 0px 99px 0px
 }
 
@@ -65,7 +68,7 @@ button {
     text-align: left;
 }
 
-.chet{
+.chet {
     font-family: 'Yandex Sans Display';
     font-weight: bold;
     font-style: normal;
@@ -90,6 +93,7 @@ button {
     border-radius: 5px;
     width: 100%;
 }
+
 .photol {
     float: left;
     /* Обтекание картинки по левому краю */

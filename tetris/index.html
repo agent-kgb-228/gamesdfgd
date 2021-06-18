@@ -19,8 +19,14 @@
     </header>
     <main>
         <div class="container">
-            <div class="collapse" id="История">
-                <div class="photol">
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="Histori" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">История</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Закрыть"></button>
+                </div>
+                <div class="offcanvas-body">
 
                     <h1> История тетриса </h1>
                     <p> «Тетрис» был впервые написан Алексеем Пажитновым 6 июня 1984 года на компьютере Электроника-60.
@@ -38,12 +44,50 @@
                     напирая именно на то, что эта мелодия — из знаменитого «Тетриса». Хотя есть немало диджеев, которые
                     сделали ремикс мелодии, обозначив «tetris remix», но не опубликовав в альбомах.
 
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#История"
-                            aria-expanded="false" aria-controls="collapseExample">
-                            Скрыть
-                        </button>
-                    </div>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="info" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Информация</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Закрыть"></button>
+                </div>
+                <div class="offcanvas-body">
+
+                    <h1>Тетрис</h1>
+                    <hr>
+                    <p>
+                        <b>Тетрис </b> - это увлекательная игра в стиле "думай" первоначально изобретённая и
+                        разработанная
+                        советским программистом Алексеем Пажитновым. Игра была выпущена 6 июня 1984 года — в это время
+                        Пажитнов работал в Вычислительном центре Академии наук СССР.
+                        Особую известность в США, и Японии приобрела версия для портативной консоли GameBoy,
+                        выпускавшаяся японской компанией Nintendo.
+                    </p>
+                    <h2>Правила</h2>
+                    <hr>
+                    <p>
+                        Случайная фигурка летит сверху ширана которая 10 ,а высота 20 клеток.игрок может
+                        поворачивать фигуру на 90 градусов и двигать,также можно повачивать фигурку пока она не
+                        сомьеститься и она проподает и вам назначают очки)
+                    </p>
+                    <h2>Начисление очков</h2>
+                    <hr>
+                    <p>
+                        Начисление очков в разных версиях «Тетриса» довольно разнообразное. Очки могут начисляться за
+                        убранные линии, за сброшенные фигурки, за переход на новую скорость и тому подобное.
+                        При начислении очков за линии количество очков обычно зависит от того, сколько линий убрано за
+                        один
+                        раз.(также была киберспортивная дисцеплина где японцы шпилили место контры))
+                        При начислении очков за линии количество очков обычно зависит от того, сколько линий убрано за
+                        один
+                        раз. Например, в китайских «Тетрисах», популярных в СНГ в 1990-х годах, начисление очков обычно
+                        было
+                        таким: 1 линия — 100 очков, 2 линии — 300 очков, 3 линии — 700 очков, 4 линии
+                        При начислении очков за сброшенные фигурки могут учитываться высота, на которой остановилась
+                        фигурка.
+                    </p>
+
                 </div>
             </div>
             <div class="panel">
@@ -68,9 +112,10 @@
                     <br>
                     <div class="btn-group" role="group" aria-label="Basic example">
 
-                        <button class="btn btn-warning" class="btn btn-warning" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#История" aria-expanded="false"
-                            aria-controls="collapseExample">История</button>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#Histori" aria-controls="offcanvasExample">
+                            История
+                        </button>
                         <button onclick="stope()" class="btn btn-warning">Пауза</button>
                         <button onclick="location.reload(); return false;" class="btn btn-success">Начать
                             заново</button>
@@ -78,9 +123,10 @@
                             data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                             Управаление
                         </button>
-                        <button class="btn btn-warning" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#Президент" aria-expanded="false"
-                            aria-controls="collapseExample">Информация</button>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#info"
+                            aria-controls="offcanvasExample">
+                            Информация
+                        </button>
 
 
                     </div>
@@ -143,49 +189,7 @@
 
 
             </div>
-            <div class="collapse" id="Президент">
-                <div class="photol2">
-                    <h1>Тетрис</h1>
-                    <hr>
-                    <p>
-                        <b>Тетрис </b> - это увлекательная игра в стиле "думай" первоначально изобретённая и
-                        разработанная
-                        советским программистом Алексеем Пажитновым. Игра была выпущена 6 июня 1984 года — в это время
-                        Пажитнов работал в Вычислительном центре Академии наук СССР.
-                        Особую известность в США, и Японии приобрела версия для портативной консоли GameBoy,
-                        выпускавшаяся японской компанией Nintendo.
-                    </p>
-                    <h2>Правила</h2>
-                    <p>
-                        Случайная фигурка летит сверху ширана которая 10 ,а высота 20 клеток.игрок может
-                        поворачивать фигуру на 90 градусов и двигать,также можно повачивать фигурку пока она не
-                        сомьеститься и она проподает и вам назначают очки)
-                    </p>
-                    <h2>Начисление очков</h2>
-                    <p>
-                        Начисление очков в разных версиях «Тетриса» довольно разнообразное. Очки могут начисляться за
-                        убранные линии, за сброшенные фигурки, за переход на новую скорость и тому подобное.
-                        При начислении очков за линии количество очков обычно зависит от того, сколько линий убрано за
-                        один
-                        раз.(также была киберспортивная дисцеплина где японцы шпилили место контры))
-                        При начислении очков за линии количество очков обычно зависит от того, сколько линий убрано за
-                        один
-                        раз. Например, в китайских «Тетрисах», популярных в СНГ в 1990-х годах, начисление очков обычно
-                        было
-                        таким: 1 линия — 100 очков, 2 линии — 300 очков, 3 линии — 700 очков, 4 линии
-                        При начислении очков за сброшенные фигурки могут учитываться высота, на которой остановилась
-                        фигурка.
-                    </p>
 
-
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-danger" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#Президент" aria-expanded="false" aria-controls="collapseExample">
-                            Скрыть
-                        </button>
-                    </div>
-                </div>
-            </div>
 
         </div>
 
