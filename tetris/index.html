@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetris</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/political-na-postsovet-space/country/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
@@ -95,18 +96,11 @@
                 <canvas id="game" width="320" height="640"></canvas>
                 <div class="button">
                     <div id="grid">
-
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <button onclick="musicminus()" class="btn btn-warning">-</button>
                             <button onclick="playmusic()" class="btn btn-warning">🔊</button>
                             <button onclick="musicplus()" class="btn btn-warning">+</button>
                         </div>
-
-
-
-
-                        <br>
-
                     </div>
 
                     <br>
@@ -123,14 +117,48 @@
                             data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                             Управаление
                         </button>
-                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#info"
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#info"
                             aria-controls="offcanvasExample">
-                            Информация
+                            Инф
+                        </button>
+
+
+                    </div>
+                    <br>
+                    <br>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Верхнее меню</button>
+                        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Нижнее меню
                         </button>
 
 
                     </div>
 
+
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <h1 id="offcanvasTopLabel">Верхнее меню</h1>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <header>
+
+                            <a href="/games/"><img src="serp.ico" alt="" class="dre"> USSR games </a>
+                            <div>
+                                <a href="/games/snake/"
+                                    title="Внимание по тех причинам некоторые игры не работают">Змейка</a>
+                                <a href="/games/nasha/">Казна России</a>
+                                <a href="/games/tetris/">Тетрис</a>
+                            </div>
+
+                        </header>
+
+                    </div>
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
                         aria-labelledby="offcanvasExampleLabel">
                         <div class="offcanvas-header">
@@ -194,7 +222,47 @@
         </div>
 
 
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
+            aria-labelledby="offcanvasBottomLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Нижнее меню</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Закрыть"></button>
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <hr>
+                            <p>&copy; 2020-2021 ООО "СССР"</p>
+                            <p><a href="/political-na-postsovet-space/">Постсоветское пространство</a></p>
+                            <p><a href="/o-windows/">Windows</a></p>
+                            <p><a href="/russia/">Российская Федерация</a></p>
 
+                            <br>
+                        </div>
+                        <div class="col-sm">
+                            <hr>
+                            <p> <b><a href="/political-na-postsovet-space/for-users/"> Для пользователя </a></b></p>
+                            <p><a href="/political-na-postsovet-space/for-users/contacts/">Поддержка</a></p>
+                            <p><a href="/political-na-postsovet-space/for-users/legal/">Правовая информация</a></p>
+                            <p><a href="/political-na-postsovet-space/for-users/legal/confidential/">Политика
+                                    Конфиденциальности</a></p>
+                            <p><a href="/political-na-postsovet-space/for-users/files/">Скачать файлы</a></p>
+                        </div>
+                        <div class="col-sm">
+                            <hr>
+                            <p> <b><a href="/games/">Игры</a></b></p>
+                            <p><a href="/games/snake/">Змейка</a></p>
+                            <p><a href="/games/nasha/">Казна РФ</a></p>
+                            <p><a href="/games/tetris/">Тетрис</a></p>
+
+                        </div>
+
+                    </div>
+
+            </footer>
+        </div>
 
     </main>
     <footer>
