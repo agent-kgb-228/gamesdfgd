@@ -56,7 +56,10 @@ canvas {
 button {
     height: 40px;
     border-radius: 20px;
-    background: rgb(251, 255, 0)
+    background: rgb(251, 255, 0);
+    font-family: 'Yandex Sans Display';
+    font-weight: bold;
+    font-style: normal;
 }
 
 .info {
@@ -110,4 +113,9 @@ button {
 .photol img {
     border-radius: 5px;
     width: 100%;
+}
+main{
+    font-family: 'Yandex Sans Display';
+    font-weight: bold;
+    font-style: normal;
 }
