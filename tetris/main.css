@@ -103,7 +103,9 @@ footer {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    font-family: 'Bellota', cursive;
+    font-family: 'Yandex Sans Display';
+    font-weight: bold;
+    font-style: normal;
     color: white;
     text-align: center;
 }
@@ -214,4 +216,14 @@ table a {
 table a:hover {
     margin: 0%;
     color: red
+}
+.sos{
+    text-decoration: none;
+    color: white;
+    margin: 0%;
+}
+.sos:hover{
+    text-decoration: none;
+    color: red;
+    margin: 0%;
 }

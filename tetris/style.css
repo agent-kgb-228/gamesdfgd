@@ -12,7 +12,7 @@ body{
     width: 600px;
     height: 900px;
     background: rgb(255, 0, 0);
-    border: solid 5px rgb(255, 0, 0);
+    border: solid 5px #000000;
     border-radius: 40px 40px 99px 40px;
 margin: 30px 15%;
     position: fixed;
@@ -32,12 +32,13 @@ canvas {
     /*нельзя*/
     background-blend-mode: multiply;
     background-color: #000000c9;
+    border-radius: 25px;
 }
 
 .button {
-    background: rgb(255, 0, 0);
+   
     margin: 10px 0px 0px 50px;
-    border: solid 1px #ff0000;
+
     height: 180px;
     border-radius: 0px 0px 99px 0px
 }
