@@ -1,6 +1,8 @@
 # games
 ## Игры
-[Казна России](https://ruzaharsu.github.io/games/nasha/)
+[Казна России](https://ruzaharsu.github.io/games/nasha/);
+<br>
+[Тетрис](https://ruzaharsu.github.io/games/tetris)
 
 ## Права использования 
 
