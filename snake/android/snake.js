@@ -7,7 +7,7 @@ let ctx = canvas.getContext("2d");
 
 let w = canvas.width;
 let h = canvas.height;
-let size = 25;
+let size = 20;
 let ochk = document.querySelector('#kom');
 let ochki = 0;
 let pobeda = 100;
