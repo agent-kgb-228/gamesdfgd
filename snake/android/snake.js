@@ -59,7 +59,7 @@ changeFoodPositon()
 let img2 = new Image()
 img2.src = 'yandex.png'
 let img3 = new Image()
-img3.src = 'Vk.svg'
+img3.src = '0.png'
 function step() {
 
     ctx.clearRect(0, 0, w, h)
@@ -130,7 +130,18 @@ ochki++
     }, 100)
 }
 step()
-
+function vverh(){
+    snake.move = "up";
+}
+function vniz(){
+    snake.move = "down";
+}
+function vlevo(){
+    snake.move = "left";
+}
+function vpravo(){
+    snake.move = "right"
+}
 document.addEventListener("keydown", function (e) {
 
 
