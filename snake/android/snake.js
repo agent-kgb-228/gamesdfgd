@@ -10,6 +10,7 @@ let h = canvas.height;
 let size = 25;
 let ochk = document.querySelector('#kom');
 let ochki = 0;
+let pobeda = 100;
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -57,11 +58,11 @@ function stope() {
 }
 changeFoodPositon()
 let img2 = new Image()
-img2.src = 'yandex.png'
+img2.src = 'android.png'
 let img3 = new Image()
-img3.src = '0.png'
+img3.src = 'yandex.png'
 function step() {
-
+    ctx.fillStyle = '#000000'
     ctx.clearRect(0, 0, w, h)
     //рисуем поле
     for (let i = 0; i <= w / size; i++) {
@@ -96,8 +97,8 @@ function step() {
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
 //победа
-if(ochki == 100){
-    alert("поздравляем вы выкупили ЯНДЕКС")
+if(ochki == pobeda){
+    alert("ЯНДЕКС выкупил Android у Google")
 }
 
 
