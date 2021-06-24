@@ -45,6 +45,16 @@ let sber = {
     y: '',
     color: 'red'
 }
+let pause = false;
+function stope() {
+    if (pause == false) {
+        pause = true
+    }
+    else {
+        pause = false
+        step()
+    }
+}
 changeFoodPositon()
 let img2 = new Image()
 img2.src = 'yandex.png'
