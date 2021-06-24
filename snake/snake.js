@@ -49,7 +49,7 @@ changeFoodPositon()
 let img2 = new Image()
 img2.src = 'yandex.png'
 let img3 = new Image()
-img3.src = 'Vk.svg'
+img3.src = 'ru.jpg'
 function step() {
 
     ctx.clearRect(0, 0, w, h)

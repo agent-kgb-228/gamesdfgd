@@ -24,8 +24,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://ruzaharsu.github.io/political-na-postsovet-space/country/style.css">
-    <link rel="stylesheet" href="https://ruzaharsu.github.io/political-na-postsovet-space/country/main.css">
+    <link rel="stylesheet" href="/russia/css/red.css">
+    <link rel="stylesheet" href="/russia/css/style.css">
     <link rel="shortcut icon"
         href="https://ruzaharsu.github.io/political-na-postsovet-space/country/ussr/gerb-of-USSR.png" image="/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,15 +42,15 @@ background: linear-gradient(0deg, rgba(255,214,0,1) 0%, rgba(255,214,0,1) 50%, r
             background-size: 100%;
             border: 1px solid black;
             background-blend-mode: multiply;
-    background-color: #000000c9;
+            background-color: #000000c9;
 
         }
 
         #grid {
-           
+
             display: grid;
             grid-template-columns: 2fr 2fr 2fr;
-      
+
         }
     </style>
     <audio src="/political-na-postsovet-space/putin/erty.mp3"></audio>
@@ -63,10 +63,12 @@ background: linear-gradient(0deg, rgba(255,214,0,1) 0%, rgba(255,214,0,1) 50%, r
 
         <a href="/games/"><img src="/games/serp.ico" alt="" class="dre"> USSR games </a>
         <div>
-            <a href="/games/snake/"
-                title="Внимание по тех причинам некоторые игры не работают">Змейка</a>
+            <a href="/games/snake/" title="Внимание по тех причинам некоторые игры не работают">Змейка</a>
             <a href="/games/nasha/">Казна России</a>
             <a href="/games/tetris/">Тетрис</a>
+        </div>
+        <div class="nav-country">
+            <a href="/games/snake/android/">Android</a>
         </div>
 
     </header>
@@ -83,31 +85,26 @@ background: linear-gradient(0deg, rgba(255,214,0,1) 0%, rgba(255,214,0,1) 50%, r
                 <button onclick="vverh()" class="btn btn-warning">↑</button>
                 <br>
                 <button onclick="vlevo()" class="btn btn-warning">←</button>
-                <button onclick="vniz()" class="btn btn-warning">↓</button>
+
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    &#8505;
+                </button>
+
                 <button onclick="vpravo()" class="btn btn-warning">→</button>
-          
-              
+                
+                <br>
+                <button onclick="vniz()" class="btn btn-warning">↓</button>
+                <br>
+
+
             </div>
 
-
+            <br>
 
 
             <script src="snake.js">
             </script>
-            <br>
-            <!-- Put this script tag to the <head> of your page -->
-            <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
-
-            <script type="text/javascript">
-                VK.init({ apiId: 7752244, onlyWidgets: true });
-            </script>
-
-            <!-- Put this div tag to the place, where the Comments block will be -->
-            <div id="vk_comments"></div>
-            <script type="text/javascript">
-                VK.Widgets.Comments("vk_comments", { limit: 20, attach: "*" });
-            </script>
-            <br>
         </div>
 
 
@@ -151,11 +148,21 @@ background: linear-gradient(0deg, rgba(255,214,0,1) 0%, rgba(255,214,0,1) 50%, r
 
     </footer>
 
-
-    <script src="/political-na-postsovet-space/country/time.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Вне холста</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Закрыть"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Это мобильная версия игры для Android. Она также доступна для пользователей ПК и apple.</p>
+            <p> <b> Самое главное для пользователей apple</b> - играйте в эту версию игры с осторжностью, чтобы дядя Тим
+                вас не забанил :)</p>
+        </div>
+        <script src="/political-na-postsovet-space/country/time.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
 
 </body>
 
