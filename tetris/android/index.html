@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <audio id="Korobejniki" src="music/Korobejniki-Tetris.mp3"></audio>
+    <audio id="Korobejniki" src="/games/tetris/music/Korobejniki-Tetris.mp3"></audio>
     <header>
 
     </header>
@@ -130,11 +130,7 @@
                
                 
 
-                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Верхнее меню</button>
-                        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Нижнее меню
-                        </button>
+                     
                   
 
                 
@@ -220,6 +216,11 @@
                                     <button onclick="ypravlenievniz()" class="btn btn-warning">↓</button>
                                     <br>
                                 </div>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Верхнее меню</button>
+                        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Нижнее меню
+                        </button>
                             </div>
                         </div>
                     </div>
@@ -238,7 +239,7 @@
         </div>
 
 
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasBottom"
             aria-labelledby="offcanvasBottomLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasBottomLabel">Нижнее меню</h5>
