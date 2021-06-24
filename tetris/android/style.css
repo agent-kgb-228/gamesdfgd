@@ -1,0 +1,121 @@
+@import url("https://ruzaharsu.github.io/russia/fonts/roboto/stylesheet.css");
+* {
+    margin: 0%;
+    padding: 0%;
+}
+body{ 
+    background: url("7Sxm62Nzr_0Iin1AofLbgYxX9B_.jpg");
+    background-size: 100%;
+
+}
+.panel {
+    width: 300px;
+    height: 675px;
+    background: rgb(255, 0, 0);
+    border: solid 5px #000000;
+    border-radius: 40px 40px 99px 40px;
+
+}
+
+canvas {
+    height: 320px;
+    /*нельзя менять*/
+    width: 160px;
+    /*нельзя менять*/
+    background: url('Vy5XnOBPWlQ.jpg');
+    /*можно менять*/
+    background-size: 100%;
+    border: solid 1px #000000;
+    /*нельзя менять*/
+    margin: 10px 00px 0px 70px;
+    /*нельзя*/
+    background-blend-mode: multiply;
+    background-color: #000000c9;
+    border-radius: 25px;
+}
+
+.button {
+   
+    margin: 10px 0px 0px 50px;
+
+    height: 180px;
+    border-radius: 0px 0px 99px 0px
+}
+
+#grid {
+    width: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: rgb(255, 255, 255);
+}
+
+#input {
+    width: 19.5%;
+}
+
+button {
+    height: 40px;
+    border-radius: 20px;
+    background: rgb(251, 255, 0);
+    font-family: 'Yandex Sans Display';
+    font-weight: bold;
+    font-style: normal;
+}
+
+.info {
+    text-align: right;
+    margin: 10px 50px 0px 50px;
+}
+
+.contorls {
+    text-align: left;
+}
+
+.chet {
+    font-family: 'Yandex Sans Display';
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+
+.photol2 {
+    float: right;
+    /* Обтекание картинки по левому краю */
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    /* Отступ снизу */
+    width: 250px;
+    border: solid 1px;
+    border-radius: 15px;
+}
+
+.photol2 img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.photol {
+    float: left;
+    /* Обтекание картинки по левому краю */
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    /* Отступ снизу */
+    width: 250px;
+    border: solid 1px;
+    border-radius: 15px;
+}
+
+.photol img {
+    border-radius: 5px;
+    width: 100%;
+}
+main{
+    font-family: 'Yandex Sans Display';
+    font-weight: bold;
+    font-style: normal;
+}
