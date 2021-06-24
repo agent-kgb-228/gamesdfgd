@@ -47,7 +47,7 @@ canvas {
     width: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background: rgb(255, 0, 0);
+    background: rgb(255, 255, 255);
 }
 
 #input {

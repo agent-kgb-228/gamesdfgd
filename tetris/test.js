@@ -333,6 +333,26 @@ document.addEventListener('keydown', function (e) {
         tetromino.row = row;
     }
 });
-
+function ypravlenie(){
+    
+     const matrix = rotate(tetromino.matrix);
+        // если так ходить можно — запоминаем
+        if (isValidMove(matrix, tetromino.row, tetromino.col)) {
+            tetromino.matrix = matrix;
+        }
+}
+function ypravlenievniz(){
+       // смещаем фигуру на строку вниз
+        const row = tetromino.row + 1;
+        // если опускаться больше некуда — запоминаем новое положение
+        if (!isValidMove(tetromino.matrix, row, tetromino.col)) {
+            tetromino.row = row - 1;
+            // ставим на место и смотрим на заполненные ряды
+            placeTetromino();
+            return;
+        }
+        // запоминаем строку, куда стала фигура
+        tetromino.row = row;
+}
 // старт игры
 rAF = requestAnimationFrame(loop);
