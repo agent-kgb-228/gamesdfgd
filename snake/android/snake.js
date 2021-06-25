@@ -9,8 +9,11 @@ let w = canvas.width;
 let h = canvas.height;
 let size = 20;
 let ochk = document.querySelector('#kom');
+let info = document.querySelector('#tablo');
 let ochki = 0;
 let pobeda = 100;
+let sovladelech = 50;
+let okolo = 75;
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -61,6 +64,8 @@ let img2 = new Image()
 img2.src = 'android.png'
 let img3 = new Image()
 img3.src = 'yandex.png'
+let img4 = new Image()
+img4.src = 'rudroid.png'
 function step() {
     ctx.fillStyle = '#000000'
     ctx.clearRect(0, 0, w, h)
@@ -80,7 +85,7 @@ function step() {
     //рисуем хвост
     ctx.fillStyle = snake.colorBody;
     for (let i = 1; i < snake.x.length; i++) {
-     ctx.drawImage(img2, snake.x[i] * size, snake.y[i] * size, size, size)
+     ctx.drawImage(img4, snake.x[i] * size, snake.y[i] * size, size, size)
       /*  ctx.drawImage(img2, food.x * size, food.y * size, size, size)*/
     }
 
@@ -98,9 +103,15 @@ function step() {
     if (snake.move === 'down') snake.y[0]++;
 //победа
 if(ochki == pobeda){
-    alert("ЯНДЕКС выкупил Android у Google")
+    info.textContent = 'Яндекс выкупил Android у Google'
+    setInterval(function() {
+        location.reload();
+       }, 10000);
 }
 
+
+if(ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс стал совладельцем Android';
+if(ochki > okolo && ochki < 100) info.textContent = 'Яндекс почти выкупил Android у Google'
 
 
     //поедание
@@ -110,7 +121,7 @@ if(ochki == pobeda){
         changeFoodPositon();
 ochki++
         ochk.textContent = ochki
-        console.log(snake)
+  
     }
     //смерть
 
