@@ -10,7 +10,7 @@ let h = canvas.height;
 let size = 20;
 let ochk = document.querySelector('#kom');
 let info = document.querySelector('#tablo');
-
+let colohik = "#000000"
 let ochki = 0;
 let pobeda = 100;
 let sovladelech = 50;
@@ -68,7 +68,7 @@ img3.src = 'yandex.png'
 let img4 = new Image()
 img4.src = 'rudroid.png'
 function step() {
-    ctx.fillStyle = '#000000'
+    ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
     //рисуем поле
     for (let i = 0; i <= w / size; i++) {
@@ -112,7 +112,7 @@ if(ochki == pobeda){
 
 
 if(ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс стал совладельцем Android';
-if(ochki > okolo && ochki < 100) info.textContent = 'Яндекс почти выкупил Android у Google'
+if(ochki > okolo && ochki < pobeda) info.textContent = 'Яндекс почти выкупил Android у Google'
 
 
 
@@ -160,6 +160,15 @@ function goText(){
     info.textContent = goText
   
 }
+function obnylit(){
+    ochki = -1;
+}
+function goCvet(){
+    let lold = document.querySelector('#cvet').value
+    console.log(colohik)
+    colohik = lold
+}
+
 function vverh(){
     snake.move = "up";
 }
