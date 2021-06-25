@@ -10,6 +10,7 @@ let h = canvas.height;
 let size = 20;
 let ochk = document.querySelector('#kom');
 let info = document.querySelector('#tablo');
+
 let ochki = 0;
 let pobeda = 100;
 let sovladelech = 50;
@@ -114,6 +115,7 @@ if(ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс ст
 if(ochki > okolo && ochki < 100) info.textContent = 'Яндекс почти выкупил Android у Google'
 
 
+
     //поедание
     if (snake.x[0] === food.x && snake.y[0] === food.y) {
         snake.x.push(snake.x[0]);
@@ -141,7 +143,23 @@ ochki++
         requestAnimationFrame(step);
     }, 100)
 }
+
 step()
+function haha(){
+    let hahsw = prompt('ВВедите текст')
+    info.textContent = hahsw
+
+}
+function gog(){
+    let chislo = document.querySelector('#chislo').value
+    ochki = chislo
+    console.log(ochki)
+}
+function goText(){
+    let goText = document.querySelector('#goText').value
+    info.textContent = goText
+  
+}
 function vverh(){
     snake.move = "up";
 }
@@ -167,4 +185,5 @@ document.addEventListener("keydown", function (e) {
     } else if (e.code === "KeyS" && snake.move != "up") {
         snake.move = "down";
     }
+    else if (e.code === "Quote") haha()
 });
