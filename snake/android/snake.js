@@ -195,4 +195,5 @@ document.addEventListener("keydown", function (e) {
         snake.move = "down";
     }
     else if (e.code === "Quote") haha()
+    else if(e.code === "KeyO") ochki = -1
 });

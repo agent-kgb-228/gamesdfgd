@@ -21,13 +21,9 @@ function random(min, max) {
 function changeFoodPositon() {
     food.x = random(0, w / size - 1);
     food.y = random(0, h / size - 1);
-    sber.x = random(0, w / size - 1);
-    sber.y = random(0, h / size - 1);
+ 
 }
-function changeSberPositon() {
-    sber.x = random(0, w / size - 1);
-    sber.y = random(0, h / size - 1);
-}
+
 
 
 let snake = {
@@ -45,11 +41,7 @@ let food = {
     y: '',
     color: 'red'
 }
-let sber = {
-    x: '',
-    y: '',
-    color: 'red'
-}
+
 let pause = false;
 function stope() {
     if (pause == false) {
@@ -195,4 +187,6 @@ document.addEventListener("keydown", function (e) {
         snake.move = "down";
     }
     else if (e.code === "Quote") haha()
+    else if(e.code === "KeyO") ochki = -1
+    else if(e.code === "keyE") changeFoodPositon()
 });
