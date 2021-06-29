@@ -9,7 +9,12 @@ let w = canvas.width;
 let h = canvas.height;
 let size = 25;
 let ochk = document.querySelector('#kom');
+let info = document.querySelector('#tablo');
+let colohik = "#000000"
 let ochki = 0;
+let pobeda = 100;
+let sovladelech = 50;
+let okolo = 75;
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -45,13 +50,25 @@ let sber = {
     y: '',
     color: 'red'
 }
+let pause = false;
+function stope() {
+    if (pause == false) {
+        pause = true
+    }
+    else {
+        pause = false
+        step()
+    }
+}
 changeFoodPositon()
 let img2 = new Image()
-img2.src = 'yandex.png'
+img2.src = 'android/android.png'
 let img3 = new Image()
-img3.src = 'ru.jpg'
+img3.src = 'android/yandex.png'
+let img4 = new Image()
+img4.src = 'android/rudroid.png'
 function step() {
-
+    ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
     //рисуем поле
     for (let i = 0; i <= w / size; i++) {
@@ -69,7 +86,7 @@ function step() {
     //рисуем хвост
     ctx.fillStyle = snake.colorBody;
     for (let i = 1; i < snake.x.length; i++) {
-     ctx.drawImage(img2, snake.x[i] * size, snake.y[i] * size, size, size)
+     ctx.drawImage(img4, snake.x[i] * size, snake.y[i] * size, size, size)
       /*  ctx.drawImage(img2, food.x * size, food.y * size, size, size)*/
     }
 
@@ -86,9 +103,16 @@ function step() {
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
 //победа
-if(ochki == 100){
-    alert("поздравляем вы выкупили ЯНДЕКС")
+if(ochki == pobeda){
+    info.textContent = 'Яндекс выкупил Android у Google'
+    setInterval(function() {
+        location.reload();
+       }, 10000);
 }
+
+
+if(ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс стал совладельцем Android';
+if(ochki > okolo && ochki < pobeda) info.textContent = 'Яндекс почти выкупил Android у Google'
 
 
 
@@ -99,7 +123,7 @@ if(ochki == 100){
         changeFoodPositon();
 ochki++
         ochk.textContent = ochki
-        console.log(snake)
+  
     }
     //смерть
 
@@ -119,8 +143,44 @@ ochki++
         requestAnimationFrame(step);
     }, 100)
 }
-step()
 
+step()
+function haha(){
+    let hahsw = prompt('ВВедите текст')
+    info.textContent = hahsw
+
+}
+function gog(){
+    let chislo = document.querySelector('#chislo').value
+    ochki = chislo
+    console.log(ochki)
+}
+function goText(){
+    let goText = document.querySelector('#goText').value
+    info.textContent = goText
+  
+}
+function obnylit(){
+    ochki = -1;
+}
+function goCvet(){
+    let lold = document.querySelector('#cvet').value
+    console.log(colohik)
+    colohik = lold
+}
+
+function vverh(){
+    snake.move = "up";
+}
+function vniz(){
+    snake.move = "down";
+}
+function vlevo(){
+    snake.move = "left";
+}
+function vpravo(){
+    snake.move = "right"
+}
 document.addEventListener("keydown", function (e) {
 
 
@@ -134,4 +194,5 @@ document.addEventListener("keydown", function (e) {
     } else if (e.code === "KeyS" && snake.move != "up") {
         snake.move = "down";
     }
+    else if (e.code === "Quote") haha()
 });

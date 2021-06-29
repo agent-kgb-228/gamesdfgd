@@ -1,0 +1,26 @@
+#canvas {
+    width: 800px;
+    height: 800px;
+    /*  background: rgb(255,214,0);
+background: linear-gradient(0deg, rgba(255,214,0,1) 0%, rgba(255,214,0,1) 50%, rgba(0,91,188,1) 50%, rgba(0,91,188,1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.507);*/
+    background: url("https://ruzaharsu.github.io//political-na-postsovet-space/country/russia/67wIjCtV13VF2Q_h4s5mPeTYw9k.jpg");
+    background-image: 800px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+div button {
+    height: 40px;
+}
+
+.ckkc {
+    background: rgb(214, 39, 24);
+    background: linear-gradient(315deg, rgba(214, 39, 24, 1) 0%, rgba(143, 44, 74, 1) 33%, rgba(0, 54, 167, 1) 33%, rgba(0, 54, 167, 1) 67%, rgba(255, 255, 255, 1) 67%, rgba(255, 255, 255, 1) 100%);
+    font-family: 'Yandex Sans Display';
+    font-weight: bold;
+    font-style: normal;
+}
