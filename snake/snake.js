@@ -188,5 +188,5 @@ document.addEventListener("keydown", function (e) {
     }
     else if (e.code === "Quote") haha()
     else if(e.code === "KeyO") ochki = -1
-    else if(e.code === "keyE") changeFoodPositon()
+    else if(e.code === "KeyE") changeFoodPositon()
 });

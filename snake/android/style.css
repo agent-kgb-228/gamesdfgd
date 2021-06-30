@@ -28,3 +28,10 @@ div button {
     font-weight: bold;
     font-style: normal;
 }
+.ckkc2 {
+    background: rgb(214, 39, 24);
+    background: linear-gradient(45deg, rgba(214, 39, 24, 1) 0%, rgba(143, 44, 74, 1) 33%, rgba(0, 54, 167, 1) 33%, rgba(0, 54, 167, 1) 67%, rgba(255, 255, 255, 1) 67%, rgba(255, 255, 255, 1) 100%);
+    font-family: 'Yandex Sans Text';
+    font-weight: 100;
+    font-style: normal
+}

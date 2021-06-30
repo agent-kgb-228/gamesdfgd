@@ -152,7 +152,8 @@ function haha(){
 }
 function gog(){
     let chislo = document.querySelector('#chislo').value
-    ochki = chislo
+    if(chislo < 100 && chislo >= -1)   ochki = chislo
+  else location.reload();
     console.log(ochki)
 }
 function goText(){
@@ -170,16 +171,17 @@ function goCvet(){
 }
 
 function vverh(){
-    snake.move = "up";
+    if(snake.move != "down") snake.move = "up";
 }
 function vniz(){
-    snake.move = "down";
+    if(snake.move != "up") snake.move = "down";
 }
 function vlevo(){
-    snake.move = "left";
+    if(snake.move != "right") snake.move = "left";
 }
 function vpravo(){
-    snake.move = "right"
+if(snake.move != "left")snake.move = "right"
+    
 }
 document.addEventListener("keydown", function (e) {
 
