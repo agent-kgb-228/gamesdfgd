@@ -32,7 +32,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Змейка</title>
-  
+
     <audio src="/political-na-postsovet-space/putin/erty.mp3"></audio>
     <!--Слава Украине-->
 
@@ -55,7 +55,7 @@
     <main>
         <div class="container">
             <br>
-            <h2>Выкуплено android: <span id="kom">0</span>% <br> <span id="tablo"></span></h2>
+            <h2>Выкуплено Microsoft: <span id="kom">0</span>% <br> <span id="tablo"></span></h2>
             <br>
 
             <canvas id="canvas" width="800" height="800"></canvas>
@@ -93,20 +93,19 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Информация <br> Info</h5>
+                <h1 class="offcanvas-title" id="offcanvasExampleLabel">Информация <br> Info</h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Закрыть"></button>
             </div>
             <div class="offcanvas-body">
-                <p>Это мобильная версия игры для Android. Она также доступна для пользователей ПК и apple.</p>
-                <p> <b> Самое главное для пользователей apple</b> - играйте в эту версию игры с осторожностью, чтобы
-                    дядя Тим
-                    не забанил вас :)</p>
-                <hr>
-                <p>This is the mobile version of the game for Android. It is also available for PC and apple users.</p>
-                <p> <b> The most important thing for apple users</b> -play this version of the game with care, so that
-                    Uncle Tim
-                    does not ban you :)</p>
+                <h2>Важная информация</h2>
+                <p>Играя в змейку вы автоматически принимаете <a
+                        href="/political-na-postsovet-space/for-users/legal/">Основное Пользовательское соглашение</a>,
+                    <a href="/games/snake/legal/"> Пользовательское соглашение по змейки</a> и
+                    <a href="/political-na-postsovet-space/for-users/legal/confidential/">Основную Политику
+                        Конфиденциальности</a>
+                </p>
+
 
                 <a style="color: #ffffff;" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button"
                     aria-controls="offcanvasRight">Читерское меню</a>
@@ -114,7 +113,8 @@
 
             </div>
         </div>
-        <div class="offcanvas ckkc offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas ckkc offcanvas-end" tabindex="-1" id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <h1 id="offcanvasRightLabel">Панель управления</h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
@@ -134,7 +134,7 @@
                 <input type="submit" class="form-control btn-primary" onclick="goText()" value="Сменить текст">
                 <br>
                 <label for="cvet">Смена цвета сетки</label>
-                <input type="color"  id="cvet" class="form-control">
+                <input type="color" id="cvet" class="form-control">
                 <input type="submit" class="form-control btn-primary" onclick="goCvet()" value="Сменить цвет">
 
 
@@ -165,6 +165,7 @@
                 <div class="col-sm">
                     <hr>
                     <p> <b><a href="/political-na-postsovet-space/for-users/"> Для пользователя </a></b></p>
+                    <p> <a href="/games/snake/legal/">Змейка. Пользовательское соглашение</a></p>
                     <p><a href="/political-na-postsovet-space/for-users/contacts/">Поддержка</a></p>
                     <p><a href="/political-na-postsovet-space/for-users/legal/">Правовая информация</a></p>
                     <p><a href="/political-na-postsovet-space/for-users/legal/confidential/">Политика

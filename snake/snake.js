@@ -21,7 +21,7 @@ function random(min, max) {
 function changeFoodPositon() {
     food.x = random(0, w / size - 1);
     food.y = random(0, h / size - 1);
- 
+
 }
 
 
@@ -54,9 +54,9 @@ function stope() {
 }
 changeFoodPositon()
 let img2 = new Image()
-img2.src = 'android/android.png'
+img2.src = 'favicon.ico'
 let img3 = new Image()
-img3.src = 'android/yandex.png'
+img3.src = 'yandex.png'
 let img4 = new Image()
 img4.src = 'android/rudroid.png'
 function step() {
@@ -73,13 +73,13 @@ function step() {
 
     //рисуем голову
     ctx.fillStyle = snake.colorHead;
-    ctx.drawImage(img3,snake.x[0] * size, snake.y[0] * size, size, size)
+    ctx.drawImage(img3, snake.x[0] * size, snake.y[0] * size, size, size)
 
     //рисуем хвост
     ctx.fillStyle = snake.colorBody;
     for (let i = 1; i < snake.x.length; i++) {
-     ctx.drawImage(img4, snake.x[i] * size, snake.y[i] * size, size, size)
-      /*  ctx.drawImage(img2, food.x * size, food.y * size, size, size)*/
+        ctx.drawImage(img4, snake.x[i] * size, snake.y[i] * size, size, size)
+        /*  ctx.drawImage(img2, food.x * size, food.y * size, size, size)*/
     }
 
     //еда
@@ -94,17 +94,17 @@ function step() {
     if (snake.move === 'left') snake.x[0]--;
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
-//победа
-if(ochki == pobeda){
-    info.textContent = 'Яндекс выкупил Android у Google'
-    setInterval(function() {
-        location.reload();
-       }, 10000);
-}
+    //победа
+    if (ochki == pobeda) {
+        info.textContent = 'Яндекс выкупил Microsoft Corporation'
+        setInterval(function () {
+            location.reload();
+        }, 10000);
+    }
 
 
-if(ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс стал совладельцем Android';
-if(ochki > okolo && ochki < pobeda) info.textContent = 'Яндекс почти выкупил Android у Google'
+    if (ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс купил 50% Microsoft Corporation';
+    if (ochki > okolo && ochki < pobeda) info.textContent = 'Яндекс почти ыкупил Microsoft Corporation'
 
 
 
@@ -113,9 +113,11 @@ if(ochki > okolo && ochki < pobeda) info.textContent = 'Яндекс почти 
         snake.x.push(snake.x[0]);
         snake.y.push(snake.y[0]);
         changeFoodPositon();
-ochki++
-        ochk.textContent = ochki
-  
+        if (ochki < pobeda) {
+            ochki++
+            ochk.textContent = ochki
+        }
+
     }
     //смерть
 
@@ -137,41 +139,42 @@ ochki++
 }
 
 step()
-function haha(){
+function haha() {
     let hahsw = prompt('ВВедите текст')
     info.textContent = hahsw
 
 }
-function gog(){
+function gog() {
     let chislo = document.querySelector('#chislo').value
     ochki = chislo
     console.log(ochki)
 }
-function goText(){
+function goText() {
     let goText = document.querySelector('#goText').value
     info.textContent = goText
-  
+
 }
-function obnylit(){
+function obnylit() {
     ochki = -1;
 }
-function goCvet(){
+function goCvet() {
     let lold = document.querySelector('#cvet').value
     console.log(colohik)
     colohik = lold
 }
 
 function vverh(){
-    snake.move = "up";
+    if(snake.move != "down") snake.move = "up";
 }
 function vniz(){
-    snake.move = "down";
+    if(snake.move != "up") snake.move = "down";
 }
 function vlevo(){
-    snake.move = "left";
+    if(snake.move != "right") snake.move = "left";
 }
 function vpravo(){
-    snake.move = "right"
+if(snake.move != "left")snake.move = "right"
+    
 }
 document.addEventListener("keydown", function (e) {
 
@@ -187,6 +190,6 @@ document.addEventListener("keydown", function (e) {
         snake.move = "down";
     }
     else if (e.code === "Quote") haha()
-    else if(e.code === "KeyO") ochki = -1
-    else if(e.code === "KeyE") changeFoodPositon()
+    else if (e.code === "KeyO") ochki = -1
+    else if (e.code === "KeyE") changeFoodPositon()
 });
