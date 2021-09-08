@@ -1,8 +1,8 @@
-# games
+# Игры СССР
 ## Игры
-[Казна России](https://ruzaharsu.github.io/games/nasha/);
+[Змейка](https://agent-kgb-228.github.io/games/snake/);
 <br>
-[Тетрис](https://ruzaharsu.github.io/games/tetris)
+[Тетрис](https://agent-kgb-228.github.io/games/tetris)
 
 ## Права использования 
 
