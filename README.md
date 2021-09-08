@@ -1,8 +1,7 @@
 # Игры СССР
 ## Игры
-[Змейка](https://agent-kgb-228.github.io/games/snake/);
-<br>
-[Тетрис](https://agent-kgb-228.github.io/games/tetris)
+* [Змейка](https://agent-kgb-228.github.io/games/snake/);
+* [Тетрис](https://agent-kgb-228.github.io/games/tetris)
 
 ## Права использования 
 
