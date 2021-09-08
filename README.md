@@ -1,15 +1,15 @@
-# Игры СССР
-## Игры
-* [Змейка](https://agent-kgb-228.github.io/games/snake/);
-* [Тетрис](https://agent-kgb-228.github.io/games/tetris)
+# Games of the USSR
+## Games
+* [Snake](https://agent-kgb-228.github.io/games/snake/);
+* [Tetris](https://agent-kgb-228.github.io/games/tetris)
 
-## Права использования 
+## Terms of Use
 
-Игры имеют открытый имеют открытый исходный код и свободную лицензию использования.
+The games are open source and have a free use license.
 
-## Обратная связь
-Написать в  [ВКонтакте](https://vk.me/club198438193)
+## Feedback
+Write to [VKontakte](https://vk.me/club198438193)
 
 <hr>
 
-© 2020-2021 ООО "Союз Современных Свободных Россиян". Все права защищены.
+© 2020-2021 LLC "USSR". All rights reserved.
