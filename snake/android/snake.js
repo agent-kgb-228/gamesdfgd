@@ -21,13 +21,8 @@ function random(min, max) {
 function changeFoodPositon() {
     food.x = random(0, w / size - 1);
     food.y = random(0, h / size - 1);
-    sber.x = random(0, w / size - 1);
-    sber.y = random(0, h / size - 1);
 }
-function changeSberPositon() {
-    sber.x = random(0, w / size - 1);
-    sber.y = random(0, h / size - 1);
-}
+
 
 
 let snake = {
@@ -50,6 +45,41 @@ let sber = {
     y: '',
     color: 'red'
 }
+/*Начало координат блоков*/
+let block1 = {
+    x: 4,
+    y: 4,
+    color: "#ff34d575",
+}
+let block2 = {
+    x: 5,
+    y: 4,
+}
+let block3 = {
+    x: 6,
+    y: 4,
+}
+let block4 = {
+    x: 7,
+    y: 4,
+}
+let block5 = {
+    x: 8,
+    y: 4,
+}
+let block6 = {
+    x: 9,
+    y: 4,
+}
+let block7 = {
+    x: 10,
+    y: 4,
+}
+let block8 = {
+    x: 11,
+    y: 4,
+}
+/*Конец координат блоков */
 let pause = false;
 function stope() {
     if (pause == false) {
@@ -67,6 +97,14 @@ let img3 = new Image()
 img3.src = 'yandex.png'
 let img4 = new Image()
 img4.src = 'rudroid.png'
+let img5 = new Image()
+img5.src = '/russia/gos-simvolika/flag-of-Russia.png'
+let img6 = new Image()
+img6.src = 'o.png'
+let img7 = new Image()
+img7.src = 'm.jpg'
+let img8 = new Image()
+img8.src = 'n.png'
 function step() {
     ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
@@ -89,7 +127,24 @@ function step() {
      ctx.drawImage(img4, snake.x[i] * size, snake.y[i] * size, size, size)
       /*  ctx.drawImage(img2, food.x * size, food.y * size, size, size)*/
     }
-
+    //блоки
+    ctx.fillStyle = block1.color;
+    ctx.fillRect(block1.x * size, block1.y * size, size, size);
+    ctx.drawImage(img5, block1.x * size, block1.y * size, size, size)
+    ctx.fillRect(block2.x * size, block2.y * size, size, size);
+    ctx.drawImage(img5, block2.x * size, block2.y * size, size, size)
+    ctx.fillRect(block3.x * size, block3.y * size, size, size);
+    ctx.drawImage(img6, block3.x * size, block3.y * size, size, size)
+    ctx.fillRect(block4.x * size, block4.y * size, size, size);
+    ctx.drawImage(img7, block4.x * size, block4.y * size, size, size)
+    ctx.fillRect(block5.x * size, block5.y * size, size, size);
+    ctx.drawImage(img6, block5.x * size, block5.y * size, size, size)
+    ctx.fillRect(block6.x * size, block6.y * size, size, size);
+    ctx.drawImage(img8, block6.x * size, block6.y * size, size, size)
+    ctx.fillRect(block7.x * size, block7.y * size, size, size);
+    ctx.drawImage(img5, block7.x * size, block7.y * size, size, size)
+    ctx.fillRect(block8.x * size, block8.y * size, size, size);
+    ctx.drawImage(img5, block8.x * size, block8.y * size, size, size)
     //еда
     ctx.fillStyle = food.color;
     ctx.drawImage(img2, food.x * size, food.y * size, size, size)
@@ -103,16 +158,9 @@ function step() {
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
 //победа
-if(ochki == pobeda){
-    info.textContent = 'Яндекс выкупил Android у Google'
-    setInterval(function() {
-        location.reload();
-       }, 10000);
-}
 
 
-if(ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс стал совладельцем Android';
-if(ochki > okolo && ochki < pobeda) info.textContent = 'Яндекс почти выкупил Android у Google'
+
 
 
 
@@ -126,6 +174,34 @@ ochki++
   
     }
     //смерть
+
+
+    if (   snake.x[0] === block1.x && snake.y[0] === block1.y 
+        || snake.x[0] === block2.x && snake.y[0] === block2.y 
+        || snake.x[0] === block3.x && snake.y[0] === block3.y
+        || snake.x[0] === block4.x && snake.y[0] === block4.y
+        || snake.x[0] === block5.x && snake.y[0] === block5.y
+        || snake.x[0] === block6.x && snake.y[0] === block6.y
+        || snake.x[0] === block7.x && snake.y[0] === block7.y
+        || snake.x[0] === block8.x && snake.y[0] === block8.y) {
+       
+        location.reload();
+  
+
+}
+
+//Смена робота если координаты совпадают с блоками
+if(    food.x === block1.x && food.y === block1.y 
+    || food.x === block2.x && food.y === block2.y 
+    || food.x === block3.x && food.y === block3.y
+    || food.x === block4.x && food.y === block4.y
+    || food.x === block5.x && food.y === block5.y
+    || food.x === block6.x && food.y === block6.y
+    || food.x === block7.x && food.y === block7.y
+    || food.x === block8.x && food.y === block8.y){
+changeFoodPositon()
+    }
+
 
 
 
@@ -152,7 +228,7 @@ function haha(){
 }
 function gog(){
     let chislo = document.querySelector('#chislo').value
-    if(chislo < 100 && chislo >= -1)   ochki = chislo
+    if( chislo >= -1)   ochki = chislo
   else location.reload();
     console.log(ochki)
 }

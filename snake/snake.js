@@ -89,6 +89,7 @@ function step() {
         snake.x[i] = snake.x[i - 1];
         snake.y[i] = snake.y[i - 1];
     }
+   
     //перемещаем голову
     if (snake.move === 'right') snake.x[0]++;
     if (snake.move === 'left') snake.x[0]--;
@@ -120,9 +121,8 @@ function step() {
 
     }
     //смерть
-
-
-
+  
+  
     if (snake.x[0] >= (w / size) + 1) {
         snake.x[0] = -1;
     } else if (snake.x[0] < 0) {
