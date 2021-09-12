@@ -21,6 +21,14 @@ function random(min, max) {
 function changeFoodPositon() {
     food.x = random(0, w / size - 1);
     food.y = random(0, h / size - 1);
+    block1.x = random(0, h / size - 1);
+    block1.y = random(0, h / size - 1);
+    block3.x = random(0, h / size - 1);
+    block3.y = random(0, h / size - 1);
+    block5.x = random(0, h / size - 1);
+    block5.y = random(0, h / size - 1);
+    block7.x = random(0, h / size - 1);
+    block7.y = random(0, h / size - 1);
 }
 
 
@@ -47,38 +55,26 @@ let sber = {
 }
 /*Начало координат блоков*/
 let block1 = {
-    x: 4,
-    y: 4,
+    x: '',
+    y: '',
     color: "#ff34d575",
 }
-let block2 = {
-    x: 5,
-    y: 4,
-}
+
 let block3 = {
-    x: 6,
-    y: 4,
+    x: '',
+    y: '',
 }
-let block4 = {
-    x: 7,
-    y: 4,
-}
+
 let block5 = {
-    x: 8,
-    y: 4,
+    x: '',
+    y: '',
 }
-let block6 = {
-    x: 9,
-    y: 4,
-}
+
 let block7 = {
-    x: 10,
-    y: 4,
+    x: '',
+    y: '',
 }
-let block8 = {
-    x: 11,
-    y: 4,
-}
+
 /*Конец координат блоков */
 let pause = false;
 function stope() {
@@ -131,21 +127,16 @@ function step() {
     ctx.fillStyle = block1.color;
     ctx.fillRect(block1.x * size, block1.y * size, size, size);
     ctx.drawImage(img5, block1.x * size, block1.y * size, size, size)
-    ctx.fillRect(block2.x * size, block2.y * size, size, size);
-    ctx.drawImage(img5, block2.x * size, block2.y * size, size, size)
+   
     ctx.fillRect(block3.x * size, block3.y * size, size, size);
-    ctx.drawImage(img6, block3.x * size, block3.y * size, size, size)
-    ctx.fillRect(block4.x * size, block4.y * size, size, size);
-    ctx.drawImage(img7, block4.x * size, block4.y * size, size, size)
+    ctx.drawImage(img5, block3.x * size, block3.y * size, size, size)
+   
     ctx.fillRect(block5.x * size, block5.y * size, size, size);
-    ctx.drawImage(img6, block5.x * size, block5.y * size, size, size)
-    ctx.fillRect(block6.x * size, block6.y * size, size, size);
-    ctx.drawImage(img8, block6.x * size, block6.y * size, size, size)
+    ctx.drawImage(img5, block5.x * size, block5.y * size, size, size)
+   
     ctx.fillRect(block7.x * size, block7.y * size, size, size);
     ctx.drawImage(img5, block7.x * size, block7.y * size, size, size)
-    ctx.fillRect(block8.x * size, block8.y * size, size, size);
-    ctx.drawImage(img5, block8.x * size, block8.y * size, size, size)
-    //еда
+   
     ctx.fillStyle = food.color;
     ctx.drawImage(img2, food.x * size, food.y * size, size, size)
     for (let i = snake.x.length - 1; i >= 1; i--) {
@@ -177,13 +168,10 @@ ochki++
 
 
     if (   snake.x[0] === block1.x && snake.y[0] === block1.y 
-        || snake.x[0] === block2.x && snake.y[0] === block2.y 
         || snake.x[0] === block3.x && snake.y[0] === block3.y
-        || snake.x[0] === block4.x && snake.y[0] === block4.y
         || snake.x[0] === block5.x && snake.y[0] === block5.y
-        || snake.x[0] === block6.x && snake.y[0] === block6.y
         || snake.x[0] === block7.x && snake.y[0] === block7.y
-        || snake.x[0] === block8.x && snake.y[0] === block8.y) {
+        ) {
        
         location.reload();
   
@@ -192,13 +180,9 @@ ochki++
 
 //Смена робота если координаты совпадают с блоками
 if(    food.x === block1.x && food.y === block1.y 
-    || food.x === block2.x && food.y === block2.y 
     || food.x === block3.x && food.y === block3.y
-    || food.x === block4.x && food.y === block4.y
     || food.x === block5.x && food.y === block5.y
-    || food.x === block6.x && food.y === block6.y
-    || food.x === block7.x && food.y === block7.y
-    || food.x === block8.x && food.y === block8.y){
+    || food.x === block7.x && food.y === block7.y){
 changeFoodPositon()
     }
 
