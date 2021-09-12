@@ -83,12 +83,7 @@ let img4 = new Image()
 img4.src = 'rudroid.png'
 let img5 = new Image()
 img5.src = '/russia/gos-simvolika/flag-of-Russia.png'
-let img6 = new Image()
-img6.src = 'o.png'
-let img7 = new Image()
-img7.src = 'm.jpg'
-let img8 = new Image()
-img8.src = 'n.png'
+
 function step() {
     ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
@@ -239,5 +234,5 @@ document.addEventListener("keydown", function (e) {
     else if(e.code === "KeyO") ochki = -1
 });
 
-// v 1.3
+// v 1.3.1
 //© 2020-2021 ООО "Союз Современных Свободных Россиян". Все права защищены. 
