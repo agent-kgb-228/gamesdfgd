@@ -25,10 +25,7 @@ function changeFoodPositon() {
     block1.y = random(0, h / size - 1);
     block3.x = random(0, h / size - 1);
     block3.y = random(0, h / size - 1);
-    block5.x = random(0, h / size - 1);
-    block5.y = random(0, h / size - 1);
-    block7.x = random(0, h / size - 1);
-    block7.y = random(0, h / size - 1);
+   
 }
 
 
@@ -65,15 +62,6 @@ let block3 = {
     y: '',
 }
 
-let block5 = {
-    x: '',
-    y: '',
-}
-
-let block7 = {
-    x: '',
-    y: '',
-}
 
 /*Конец координат блоков */
 let pause = false;
@@ -131,11 +119,7 @@ function step() {
     ctx.fillRect(block3.x * size, block3.y * size, size, size);
     ctx.drawImage(img5, block3.x * size, block3.y * size, size, size)
    
-    ctx.fillRect(block5.x * size, block5.y * size, size, size);
-    ctx.drawImage(img5, block5.x * size, block5.y * size, size, size)
-   
-    ctx.fillRect(block7.x * size, block7.y * size, size, size);
-    ctx.drawImage(img5, block7.x * size, block7.y * size, size, size)
+
    
     ctx.fillStyle = food.color;
     ctx.drawImage(img2, food.x * size, food.y * size, size, size)
@@ -168,10 +152,7 @@ ochki++
 
 
     if (   snake.x[0] === block1.x && snake.y[0] === block1.y 
-        || snake.x[0] === block3.x && snake.y[0] === block3.y
-        || snake.x[0] === block5.x && snake.y[0] === block5.y
-        || snake.x[0] === block7.x && snake.y[0] === block7.y
-        ) {
+        || snake.x[0] === block3.x && snake.y[0] === block3.y) {
        
         location.reload();
   
@@ -180,9 +161,7 @@ ochki++
 
 //Смена робота если координаты совпадают с блоками
 if(    food.x === block1.x && food.y === block1.y 
-    || food.x === block3.x && food.y === block3.y
-    || food.x === block5.x && food.y === block5.y
-    || food.x === block7.x && food.y === block7.y){
+    || food.x === block3.x && food.y === block3.y){
 changeFoodPositon()
     }
 
@@ -259,3 +238,6 @@ document.addEventListener("keydown", function (e) {
     else if (e.code === "Quote") haha()
     else if(e.code === "KeyO") ochki = -1
 });
+
+// v 1.3
+//© 2020-2021 ООО "Союз Современных Свободных Россиян". Все права защищены. 
