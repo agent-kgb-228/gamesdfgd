@@ -10,7 +10,7 @@ let h = canvas.height;
 let size = 25;
 let ochk = document.querySelector('#kom');
 let info = document.querySelector('#tablo');
-let score15 = document.querySelector('#score152');
+let score152 = document.querySelector('#score152');
 let colohik = "#000000"
 let ochki = 0;
 let pobeda = 100;
@@ -153,7 +153,7 @@ if (snake.x[0] === block1.x && snake.y[0] === block1.y
     }
     if(ochki > score12){
         score12 = ochki
-        score15.textContent = score12
+        score152.textContent = score12
         save117()
     }
   
