@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казна России</title>
+    <link rel="shortcut icon" href="/games/serp.ico" image="/x-icon">
+    <style>
+        @media (max-width: 750px) and (min-width: 0px) {
+
+            html,
+            body {
+                background-color: black;
+                color: white;
+            }
+        }
+
+        button {
+            background-color: rgb(42, 96, 197);
+            font-size: 1.3em;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            border-radius: 12px;
+            border-color: #45859600;
+            border: solid 0px;
+        }
+        button:hover{
+            border: solid 0px;
+            border-color: #45859600;
+        }
+
+        #lol {
+            background-color: red;
+            font-size: 1.3em;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+            border: solid 0px;
+        }
+
+        #green {
+            background-color: green;
+            font-size: 1.3em;
+            width: 100%;
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 1.5em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        footer {
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #155a15;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Казна России</h1>
+    </header>
+    <main>
+        <button onclick="go()" id="lol">Собрать деньги с народа (нажимать в крайнем случае)</button>
+        <p>Денег в казне: <span id="kom"></span></p>
+        <p>Цель: не просрать деньги</p>
+        <hr>
+        <button onclick="bon()">Произвести выплаты (2 000 000 000 рублей)</button>
+        <br><br>
+        <button onclick="rubl()" id="green">Выпустить рубль </button>
+        <br><br>
+        <button onclick="remont()">На ремонт дорог (150000000000000)</button>
+        <br><br>
+        <button onclick="ledx()">Введите любую сумму пополнения</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </main>
+    <footer>
+        &copy; 2020-2021 ООО "games СССР"<br>
+        Данная игра является игровым
+        сюжетом. Совпадения с реальной жизнью случайны.
+        <br>
+        <br><a href="/political-na-postsovet-space/legal/">Правовая информация</a>
+        <br>
+        <a href="/games">Главная</a>
+    </footer>
+    <script>
+        let ochk = document.querySelector('#kom');
+        let ochki = 0;
+
+        if(localStorage['ochki']) {
+            ochki = localStorage['ochki'];
+        } 
+        
+        ochk.textContent = ochki;
+
+        let ochki_Plus = 1;
+        let ochki_Plus_auto = 0;
+        let nalogi = 1000000;
+        
+        function ledx() {
+            let a = +prompt("где наши деньги? на что пошла наша многомиллиардная помощь? ")
+            ochki += a
+            saveOchki();
+            ochk.textContent = ochki
+        }
+
+
+
+        function go() {
+            ochki += 900000000000000000
+            saveOchki();
+            ochk.textContent = ochki
+        }
+        function rubl() {
+            ochki += 1;
+            saveOchki();
+            ochk.textContent = ochki
+        }
+        function remont() {
+            if (ochki >= 15000000000) {
+
+                ochki -= 15000000000;
+                saveOchki();
+                ochk.textContent = ochki
+            }
+            else {
+                alert("Блин... Денег на ремонт нет!!! " + "  " + "Идите на фиг со своими дорогами!!!")
+            }
+        }
+        function bon() {
+
+            if (ochki >= 2000000000000) {
+
+                ochki -= 2000000000000;
+                saveOchki();
+                ochk.textContent = ochki
+            }
+            else {
+                alert("Песец!!! Денег в казне нет!!!")
+            }
+        }
+        function autoPlus() {
+
+            if (ochki >= 100) {
+                ochki -= 100
+                ochk.textContent = ochki
+                ochki_Plus_auto++
+            }
+            else {
+                alert("Денег в казне нет!!!")
+            }
+        }
+        if(localStorage['ochk']){
+            ochk = localStorage['ochk']
+        }
+
+        
+        if(ochk){
+            localStorage['ochk'] = ochk;
+
+        }
+        setInterval(() => {
+            ochki += ochki_Plus_auto;
+            saveOchki();
+            ochk.textContent = ochki
+
+        }, 100)
+
+
+
+       
+        function saveOchki() {
+            localStorage['ochki'] = ochki;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

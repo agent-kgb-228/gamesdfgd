@@ -10,11 +10,13 @@ let h = canvas.height;
 let size = 20;
 let ochk = document.querySelector('#kom');
 let info = document.querySelector('#tablo');
+let score15 = document.querySelector('#score15');
 let colohik = "#000000"
 let ochki = 0;
 let pobeda = 100;
 let sovladelech = 50;
 let okolo = 75;
+let score1 = 0;
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -141,7 +143,20 @@ function step() {
         changeFoodPositon();
 ochki++
         ochk.textContent = ochki
+        score15.textContent = score1
   
+    }
+    //
+    if(localStorage['score1']){
+        score1 = localStorage['score1']
+    }
+    function save117(){
+        localStorage['score1'] = score1 
+    }
+    if(ochki > score1){
+        score1 = ochki
+        score15.textContent = score1
+        save117()
     }
     //смерть
 
@@ -197,6 +212,11 @@ function goText(){
 }
 function obnylit(){
     ochki = -1;
+}
+function obnylyatia(){
+    score1 = -1
+    save117()
+
 }
 function goCvet(){
     let lold = document.querySelector('#cvet').value
