@@ -10,17 +10,23 @@ let h = canvas.height;
 let size = 25;
 let ochk = document.querySelector('#kom');
 let info = document.querySelector('#tablo');
+let score15 = document.querySelector('#score152');
 let colohik = "#000000"
 let ochki = 0;
 let pobeda = 100;
 let sovladelech = 50;
 let okolo = 75;
+let score12 = 0;
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function changeFoodPositon() {
     food.x = random(0, w / size - 1);
     food.y = random(0, h / size - 1);
+    block1.x = random(0, h / size - 1);
+    block1.y = random(0, h / size - 1);
+    block3.x = random(0, h / size - 1);
+    block3.y = random(0, h / size - 1);
 
 }
 
@@ -41,6 +47,17 @@ let food = {
     y: '',
     color: 'red'
 }
+/*Начало координат блоков*/
+let block1 = {
+    x: '',
+    y: '',
+    color: "#ff34d575",
+}
+
+let block3 = {
+    x: '',
+    y: '',
+}
 
 let pause = false;
 function stope() {
@@ -59,6 +76,8 @@ let img3 = new Image()
 img3.src = 'yandex.png'
 let img4 = new Image()
 img4.src = 'android/rudroid.png'
+let img5 = new Image()
+img5.src = '/russia/gos-simvolika/flag-of-Russia.png'
 function step() {
     ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
@@ -82,6 +101,12 @@ function step() {
         /*  ctx.drawImage(img2, food.x * size, food.y * size, size, size)*/
     }
 
+    ctx.fillStyle = block1.color;
+    ctx.fillRect(block1.x * size, block1.y * size, size, size);
+    ctx.drawImage(img5, block1.x * size, block1.y * size, size, size)
+   
+    ctx.fillRect(block3.x * size, block3.y * size, size, size);
+    ctx.drawImage(img5, block3.x * size, block3.y * size, size, size)
     //еда
     ctx.fillStyle = food.color;
     ctx.drawImage(img2, food.x * size, food.y * size, size, size)
@@ -96,16 +121,15 @@ function step() {
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
     //победа
-    if (ochki == pobeda) {
-        info.textContent = 'Яндекс выкупил Microsoft Corporation'
-        setInterval(function () {
-            location.reload();
-        }, 10000);
-    }
+  
 
+//смерть
 
-    if (ochki >= sovladelech && ochki <= okolo) info.textContent = 'Яндекс купил 50% Microsoft Corporation';
-    if (ochki > okolo && ochki < pobeda) info.textContent = 'Яндекс почти ыкупил Microsoft Corporation'
+if (snake.x[0] === block1.x && snake.y[0] === block1.y
+    || snake.x[0] === block3.x && snake.y[0] === block3.y) {
+
+    location.reload();
+}
 
 
 
@@ -114,13 +138,24 @@ function step() {
         snake.x.push(snake.x[0]);
         snake.y.push(snake.y[0]);
         changeFoodPositon();
-        if (ochki < pobeda) {
+       
             ochki++
             ochk.textContent = ochki
-        }
+        
 
     }
-    //смерть
+    //рекорд
+    if(localStorage['score12']){
+        score12 = localStorage['score12']
+    }
+    function save117(){
+        localStorage['score12'] = score12
+    }
+    if(ochki > score12){
+        score12 = ochki
+        score15.textContent = score12
+        save117()
+    }
   
   
     if (snake.x[0] >= (w / size) + 1) {
