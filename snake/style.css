@@ -8,7 +8,12 @@ background: linear-gradient(0deg, rgba(255,214,0,1) 0%, rgba(255,214,0,1) 50%, r
  background-size: 100%;
  background-blend-mode: multiply;
  background-color: #000000c9;
-
+padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 2%;
 }
 
 #grid {

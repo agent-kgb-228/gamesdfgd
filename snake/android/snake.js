@@ -85,7 +85,8 @@ let img4 = new Image()
 img4.src = 'rudroid.png'
 let img5 = new Image()
 img5.src = '/russia/gos-simvolika/flag-of-Russia.png'
-
+let img6 = new Image()
+img6.src = '/political-na-postsovet-space/country/ukraine/flag-of-ukraine.png'
 function step() {
     ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
@@ -114,7 +115,7 @@ function step() {
     ctx.drawImage(img5, block1.x * size, block1.y * size, size, size)
 
     ctx.fillRect(block3.x * size, block3.y * size, size, size);
-    ctx.drawImage(img5, block3.x * size, block3.y * size, size, size)
+    ctx.drawImage(img6, block3.x * size, block3.y * size, size, size)
 
 
 
