@@ -213,8 +213,7 @@ function obnylit() {
     ochki = -1;
 }
 function obnylyatia() {
-    score1 = -1
-    save117()
+   localStorage.clear();
 
 }
 function goCvet() {

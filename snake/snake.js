@@ -13,9 +13,6 @@ let info = document.querySelector('#tablo');
 let score152 = document.querySelector('#score152');
 let colohik = "#000000"
 let ochki = 0;
-let pobeda = 100;
-let sovladelech = 50;
-let okolo = 75;
 let score12 = 0;
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -104,7 +101,7 @@ function step() {
     ctx.fillStyle = block1.color;
     ctx.fillRect(block1.x * size, block1.y * size, size, size);
     ctx.drawImage(img5, block1.x * size, block1.y * size, size, size)
-   
+
     ctx.fillRect(block3.x * size, block3.y * size, size, size);
     ctx.drawImage(img5, block3.x * size, block3.y * size, size, size)
     //еда
@@ -114,50 +111,49 @@ function step() {
         snake.x[i] = snake.x[i - 1];
         snake.y[i] = snake.y[i - 1];
     }
-   
+
     //перемещаем голову
     if (snake.move === 'right') snake.x[0]++;
     if (snake.move === 'left') snake.x[0]--;
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
-    //победа
-  
-
-//смерть
-
-if (snake.x[0] === block1.x && snake.y[0] === block1.y
-    || snake.x[0] === block3.x && snake.y[0] === block3.y) {
-
-    location.reload();
-}
 
 
+    //смерть
+
+    if (snake.x[0] === block1.x && snake.y[0] === block1.y
+        || snake.x[0] === block3.x && snake.y[0] === block3.y) {
+
+        location.reload();
+    }
+
+    
 
     //поедание
     if (snake.x[0] === food.x && snake.y[0] === food.y) {
         snake.x.push(snake.x[0]);
         snake.y.push(snake.y[0]);
         changeFoodPositon();
-       
-            ochki++
-            ochk.textContent = ochki
-        
+
+        ochki++
+        ochk.textContent = ochki
+
 
     }
     //рекорд
-    if(localStorage['score12']){
+    if (localStorage['score12']) {
         score12 = localStorage['score12']
     }
-    function save117(){
+    function save117() {
         localStorage['score12'] = score12
     }
-    if(ochki > score12){
+    if (ochki > score12) {
         score12 = ochki
         score152.textContent = score12
         save117()
     }
-  
-  
+
+
     if (snake.x[0] >= (w / size) + 1) {
         snake.x[0] = -1;
     } else if (snake.x[0] < 0) {
@@ -198,18 +194,18 @@ function goCvet() {
     colohik = lold
 }
 
-function vverh(){
-    if(snake.move != "down") snake.move = "up";
+function vverh() {
+    if (snake.move != "down") snake.move = "up";
 }
-function vniz(){
-    if(snake.move != "up") snake.move = "down";
+function vniz() {
+    if (snake.move != "up") snake.move = "down";
 }
-function vlevo(){
-    if(snake.move != "right") snake.move = "left";
+function vlevo() {
+    if (snake.move != "right") snake.move = "left";
 }
-function vpravo(){
-if(snake.move != "left")snake.move = "right"
-    
+function vpravo() {
+    if (snake.move != "left") snake.move = "right"
+
 }
 document.addEventListener("keydown", function (e) {
 
