@@ -12,4 +12,4 @@ Write to [VKontakte](https://vk.me/club198438193)
 
 <hr>
 
-© 2020-2021 LLC "USSR". All rights reserved.
+© 2020-2021 LLC Non-profit organization "USSR". All rights reserved.
