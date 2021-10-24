@@ -227,3 +227,38 @@ table a:hover {
     color: red;
     margin: 0%;
 }
+body.dark{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: auto;
+    background-color: black;
+    font-size: 15px;
+    height: 100%;
+}
+body.dark header{
+    color: white;
+    background: #051a05;
+  
+  
+}
+body.dark main {
+    background: rgb(12, 12, 11);
+   
+  
+}
+body.dark header div {
+    color: white;
+    background-color: #001b00;
+}
+body.dark footer {
+    background: #000000;
+}
+body.dark div table{
+    color:#ffffff;
+}
+body.dark .rusu23 {
+    background: #00000000;
+}
+body.dark #nav-country {
+    color: white;
+    background-color: #00000000;
+}
