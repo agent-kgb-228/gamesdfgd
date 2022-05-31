@@ -12,4 +12,4 @@ Write to [VKontakte](https://vk.me/club198438193)
 
 <hr>
 
-© 2020-2022 "USSR Games". Included in "Stalin on Post Soviet space"
+© 2020-2021 LLC Non-profit organization "USSR". All rights reserved.

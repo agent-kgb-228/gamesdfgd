@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бета змейка</title>
+    <link rel="shortcut icon" href="/serp.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/snake/android/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        header {
+            color: white;
+
+            background: rgba(255, 255, 255, 0.800);
+            width: 100%;
+            height: auto;
+            display: flex;
+            font-size: 18px;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid black;
+            padding: 1px;
+        }
+
+        body {
+            background-image: url("https://agent-kgb-228.github.io/Win-XP.jpg");
+            background-blend-mode: multiply;
+            background-color: #00000036;
+            background-position: center center;
+            background-repeat: no-repeat;
+            /* Фон зафиксирован в области просмотра и потому не двигается, когда высота контента превышает высоту изображения */
+            background-attachment: fixed;
+            background-size: cover;
+            color: #ffffff;
+            /*  background: rgb(255, 199, 0);*/
+        }
+
+        main {
+            background: rgba(255, 255, 255, 0.500);
+            color: #000000;
+        }
+
+        button {
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background: #00000000;
+      
+
+        }
+
+        footer {
+            border-top: 1px solid #181818;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /*dark*/
+        body.dark header {
+            color: white;
+
+            background: rgba(24, 24, 24, 0.600);
+            width: 100%;
+            height: auto;
+            display: flex;
+            font-size: 18px;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #f5f5f5;
+            padding: 1px;
+            color: #ffffff;
+        }
+
+        body.dark {
+            background-image: url("https://agent-kgb-228.github.io/Win-XP.jpg");
+            background-blend-mode: multiply;
+            background-color: #0000008f;
+            background-position: center center;
+            background-repeat: no-repeat;
+            /* Фон зафиксирован в области просмотра и потому не двигается, когда высота контента превышает высоту изображения */
+            background-attachment: fixed;
+            background-size: cover;
+            color: #ffffff;
+            /*  background: rgb(255, 199, 0);*/
+
+        }
+
+        body.dark main {
+            background: rgba(23, 23, 23, 0.500);
+            color: #ffffff;
+        }
+
+        body.dark button {
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            background: #00000000;
+            color: #ffffff;
+        }
+
+        body.dark footer {
+            border-top: 1px solid #f5f5f5;
+            background: #181818;
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="container">
+        <a href="/snake/"><button>Snake</button></a>
+        <a href="/"><button>&#8962;</button></a>
+        <a href="/snake/android/"><button>Android</button></a>
+    </header>
+    <main class="container">
+        <br>
+
+        <h2>Счет: <span id="kom">0</span> <br> Рекорд:<span id="score15">0</span><br><span id="tablo"></span></h2>
+
+        <br>
+        <canvas id="canvas" width="320" height="320"></canvas>
+        <br>
+
+        <div id="grid">
+            <br>
+            <button onclick="vverh()">↑</button>
+            <br>
+            <button onclick="vlevo()">←</button>
+
+            <button onclick="vniz()">↓</button>
+
+            <button onclick="vpravo()">→</button>
+
+        </div>
+
+
+        <hr>
+        <h2>Поддержать</h2>
+        <form method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+            <input type="hidden" name="receiver" value="4100116774485382">
+            <input type="hidden" name="formcomment" value="На развитие сайта и на пиво адинам">
+            <input type="hidden" name="short-dest" value="На развитие сайта и на пиво адинам">
+            <input type="hidden" name="label" value="НА ПИВАС">
+            <input type="hidden" name="quickpay-form" value="donate">
+            <input type="hidden" name="targets" value="транзакция">
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Сумма для перевода</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="sum" placeholder="Например, 100" required="">
+                <div id="emailHelp" class="form-text">Сумма перевода</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Назначение перевода</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="comment" required="" placeholder="На пример, на развитие сайта и на пиво адинам">
+                <div id="emailHelp" class="form-text">Обязательно</div>
+            </div>
+            <input type="hidden" name="need-fio" value="true">
+            <input type="hidden" name="need-email" value="true">
+            <input type="hidden" name="need-phone" value="false">
+            <input type="hidden" name="need-address" value="false">
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentType" value="PC" id="flexRadioDefault1"
+                    checked="">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    ЮMoney
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="paymentType" value="AC" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Банковской картой
+                </label>
+            </div>
+            <div class="col-12" style="text-align: center;">
+                <input type="submit" value="Перевести">
+            </div>
+
+        </form>
+
+        <br>
+
+    </main>
+
+    <footer class="container">
+
+        © <b>2021-2022 "Советский интернет"</b> <br>Данный сайт
+        поддерживается на всех браузерах, даже на Inernet Explorer
+        <hr>
+  
+            <a href="https://www.ru-stalin-ussr.ru"><button>Главный сайт</button></a> <a
+                href="https://www.ru-stalin-ussr.ru/privacy/"><button>Пользовательсое Соглашение и Политика
+                Конфиденциальности </button></a>
+
+   
+        <hr>
+        <button id="ThemeBTN">light</button>
+
+        <br>
+        <br>
+    </footer>
+    <script src="snake.js"></script>
+    <script src="theme.js"></script>
+</body>
+
+</html>

@@ -1,3 +1,16 @@
+/*
+
+            |‾‾‾‾‾‾‾‾‾‾‾‾|          |‾‾‾‾‾‾‾‾‾‾‾‾|          |‾‾‾‾‾‾‾‾‾‾‾‾|          |‾‾‾‾‾‾‾‾‾‾‾‾|    
+            |            |          |            |          |            |          |      ___   |
+            |    |‾‾‾‾‾‾‾           |    |‾‾‾‾‾‾‾           |    |‾‾‾‾‾‾‾           |     |   |  |
+            |    |                  |    |                  |    |                  |      ‾‾‾   |
+            |    |                  |    |                  |    |                  |     _______|
+            |    |                  |    |                  |    |                  |    |
+            |     ‾‾‾‾‾‾‾|          |     ‾‾‾‾‾‾‾|          |     ‾‾‾‾‾‾‾|          |    |
+            |____________|          |____________|          |____________|          |____|
+
+*/
+
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -36,7 +49,7 @@ let snake = {
     x: [],
     y: [],
     colorHead: "rgb(202, 250, 204)",
-    colorBody: "yellow",
+    colorBody: "#00000000",
     move: 'right',
 }
 snake.x[0] = 0;
@@ -52,7 +65,7 @@ let sber = {
     y: '',
     color: 'red'
 }
-/*Начало координат блоков*/
+//block coordinates
 let block1 = {
     x: '',
     y: '',
@@ -63,10 +76,7 @@ let block3 = {
     x: '',
     y: '',
 }
-
-
-/*Конец координат блоков */
-let pause = false;
+let pause = false; //the pause function, which does not pause the game, but, on the contrary, accelerates the speed of the snake
 function stope() {
     if (pause == false) {
         pause = true
@@ -76,13 +86,25 @@ function stope() {
         step()
     }
 }
+/*
+
+            |‾‾‾‾‾‾‾‾‾‾‾‾|          
+            |            |          
+            |    |‾‾‾‾‾‾‾           
+            |    |                  
+            |    |                  
+            |    |                 
+            |     ‾‾‾‾‾‾‾|          
+            |____________|          
+
+*/
 changeFoodPositon()
 let img2 = new Image()
-img2.src = 'android.png'
+img2.src = '/serp.ico'
 let img3 = new Image()
 img3.src = 'yandex.png'
 let img4 = new Image()
-img4.src = 'rudroid.png'
+img4.src = '/gif/soviet-flag-18.gif'
 let img5 = new Image()
 img5.src = '/snake/flag-of-Russia.png'
 let img6 = new Image()
@@ -90,7 +112,7 @@ img6.src = '/snake/flag-of-Russia.png'
 function step() {
     ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
-    //рисуем поле
+    //drawing the field for the game
     for (let i = 0; i <= w / size; i++) {
         ctx.fillRect(i * size, 0, 1, w);
         for (let j = 0; j <= h / size; j++) {
@@ -99,17 +121,17 @@ function step() {
         }
     }
 
-    //рисуем голову
+    //drawing the snake's head
     ctx.fillStyle = snake.colorHead;
     ctx.drawImage(img3, snake.x[0] * size, snake.y[0] * size, size, size)
 
-    //рисуем хвост
+    //drawing the snake's body
     ctx.fillStyle = snake.colorBody;
     for (let i = 1; i < snake.x.length; i++) {
         ctx.drawImage(img4, snake.x[i] * size, snake.y[i] * size, size, size)
-        /*  ctx.drawImage(img2, food.x * size, food.y * size, size, size)*/
+      
     }
-    //блоки
+    //blocks
     ctx.fillStyle = block1.color;
     ctx.fillRect(block1.x * size, block1.y * size, size, size);
     ctx.drawImage(img5, block1.x * size, block1.y * size, size, size)
@@ -125,19 +147,29 @@ function step() {
         snake.x[i] = snake.x[i - 1];
         snake.y[i] = snake.y[i - 1];
     }
-    //перемещаем голову
+    //moving the head
     if (snake.move === 'right') snake.x[0]++;
     if (snake.move === 'left') snake.x[0]--;
     if (snake.move === 'up') snake.y[0]--;
     if (snake.move === 'down') snake.y[0]++;
-    //победа
+
+
+/*
+
+            |‾‾‾‾‾‾‾‾‾‾‾‾|          
+            |            |          
+            |    |‾‾‾‾‾‾‾           
+            |    |                  
+            |    |                  
+            |    |                 
+            |     ‾‾‾‾‾‾‾|          
+            |____________|          
+
+*/
 
 
 
-
-
-
-    //поедание
+    //eating food
     if (snake.x[0] === food.x && snake.y[0] === food.y) {
         snake.x.push(snake.x[0]);
         snake.y.push(snake.y[0]);
@@ -147,7 +179,7 @@ function step() {
         score15.textContent = score1
 
     }
-    //рекорд
+    //saving the account value to the local storage
     if (localStorage['score1']) {
         score1 = localStorage['score1']
     }
@@ -159,7 +191,7 @@ function step() {
         score15.textContent = score1
         save117()
     }
-    //смерть
+    //death of the snake
 
 
     if (snake.x[0] === block1.x && snake.y[0] === block1.y
@@ -168,13 +200,24 @@ function step() {
         location.reload();
     }
 
-    //Смена робота если координаты совпадают с блоками
+    //Changing the robot if the coordinates match the blocks
     if (food.x === block1.x && food.y === block1.y
         || food.x === block3.x && food.y === block3.y) {
         changeFoodPositon()
     }
 
+/*
 
+            |‾‾‾‾‾‾‾‾‾‾‾‾|          
+            |            |          
+            |    |‾‾‾‾‾‾‾           
+            |    |                  
+            |    |                  
+            |    |                 
+            |     ‾‾‾‾‾‾‾|          
+            |____________|          
+
+*/
 
 
     if (snake.x[0] >= (w / size) + 1) {
@@ -193,6 +236,23 @@ function step() {
 }
 
 step()
+//Access to these functions is not available in this version
+
+
+
+/*
+
+            |‾‾‾‾‾‾‾‾‾‾‾‾|    
+            |      ___   |
+            |     |   |  |
+            |      ‾‾‾   |
+            |     _______|
+            |    |
+            |    |
+            |____|
+                 
+
+*/
 function haha() {
     let hahsw = prompt('ВВедите текст')
     info.textContent = hahsw
@@ -213,7 +273,7 @@ function obnylit() {
     ochki = -1;
 }
 function obnylyatia() {
-   localStorage.clear();
+    localStorage.clear();
 
 }
 function goCvet() {
@@ -252,5 +312,18 @@ document.addEventListener("keydown", function (e) {
     else if (e.code === "KeyO") ochki = -1
 });
 
-// v 1.3.1
-//© 2020-2021 ООО "Союз Современных Свободных Россиян". Все права защищены. 
+// v 2.0.0
+//© 2021-2022 "USSR Games". Included in "Stalin on Post Soviet space"
+
+/*
+
+            |‾‾‾‾‾‾‾‾‾‾‾‾|          |‾‾‾‾‾‾‾‾‾‾‾‾|          |‾‾‾‾‾‾‾‾‾‾‾‾|          |‾‾‾‾‾‾‾‾‾‾‾‾|    
+            |            |          |            |          |            |          |      ___   |
+            |    |‾‾‾‾‾‾‾           |    |‾‾‾‾‾‾‾           |    |‾‾‾‾‾‾‾           |     |   |  |
+            |    |                  |    |                  |    |                  |      ‾‾‾   |
+            |    |                  |    |                  |    |                  |     _______|
+            |    |                  |    |                  |    |                  |    |
+            |     ‾‾‾‾‾‾‾|          |     ‾‾‾‾‾‾‾|          |     ‾‾‾‾‾‾‾|          |    |
+            |____________|          |____________|          |____________|          |____|
+
+*/

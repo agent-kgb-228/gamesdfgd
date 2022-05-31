@@ -74,7 +74,7 @@ img3.src = 'yandex.png'
 let img4 = new Image()
 img4.src = 'android/rudroid.png'
 let img5 = new Image()
-img5.src = '/russia/gos-simvolika/flag-of-Russia.png'
+img5.src = 'flag-of-Russia.png'
 function step() {
     ctx.fillStyle = colohik
     ctx.clearRect(0, 0, w, h)
